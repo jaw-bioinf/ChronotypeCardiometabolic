@@ -167,13 +167,115 @@ $^{6}$ NIHR Biomedical Research Centre, University Hospital Birmingham, Birmingh
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materials and Methods}
+A general workflow for the several MR studies in this chapter are depicted in Figure \ref{fig:MR_Workflow}. Data can be acquired from previously performed GWAS studies with data deposited in the GWAS Catalog, MR Base, or another database. Additionally, researchers may conduct their own GWAS using data they have available. I have done this in order to ensure that I include appropriate covariates during the GWAS itself. Next, to ensure sample independence, the UKBB population is split into two groups randomly, each with half the population. Then GWAS are conducted and held for further analysis. A discovery set of SNPs are obtained from an outside data source. Next, effect sizes and their variance from each GWAS are extracted for the discovery SNP loci. Data are then combined, and the effect sizes meta-analyzed to produce an MR study. Lastly, post-hoc analyses are performed to test for pleiotropy, directionality of effect between exposure and outcome, and the influence of specific SNPs in the model.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\linewidth]{chapter3/HighRes_Fig_Tables/Signif/MR_workflow.pdf}
+	\caption[Mendelian randomization workflow]{Mendelian Randomization workflow for testing the causal influence of Evening Chronotype on psychosocial and vision traits from the UK Biobank (UKBB). Discovery SNPs associating with chronotype are obtained from an outside population. The UKBB is split into exposure, which has a GWAS performed against Chronotype, and Outcome, which has a GWAS performed against another trait. Discovery SNPs or proxies are extracted from each GWAS, using clumping to ensure SNP independence. Data are combined, and an IVW meta-analysis of effect sizes from GWAS is performed, followed by tests for pleiotropy, directionality, and sensitivity. SNPs = single nucleotide polymorphisms, LD = linkage disequilibrium, GWAS = genome wide association study, IVW = inverse-variance weighted.}
+	\label{fig:MR_Workflow}
+\end{figure}
+
+\subsection{Data Acquisition}
+To obtain an unbiased set of SNPs which associate to chronotype, I downloaded all significant (<= 9.000e-6) variants from a 2016 GWAS conducted by 23andMe \citep{hu_gwas_2016} via GWAS Catalog \citep{gwas_catalog}, accession GCST00342, a total of 77 SNPs on 20 Jan, 2020. 
+
+\subsubsection{Experimental Data}
+The UK Biobank (UKBB) \citep{bycroft_uk_2018} was initially proposed by the Wellcome Trust and the Medical Research Council, with the goal of identifying risk factors for human disease \citep{collins_what_2012}. The resource focuses on middle age adults, largely of European descent. A plethora of biological samples and exams were taken from each subject, including genetic material, magnetic resonance imaging (MRI) of several body regions, health and lifestyle questionnaires, and medical history data. The UKBB aims to recruit 500,000 individuals, a large sample size reflecting the likelihood of any one individual developing a given disorder or disease \citep{collins_what_2012}. Participants signed electronic concent declarations, and the UKBB received ethics approval \citep{bycroft_uk_2018}. For a full description of the resource and every measure available for use upon approved application, see https://biobank.ctsu.ox.ac.uk/crystal/, with further details available as reported previously \citep{bycroft_uk_2018,collins_what_2012}. The research in this chapter was performed under project number 31224. 
+
+UK resident participants registered with the National Health Service (NHS) were recruited between 40 and 69 years of age between 2006 and 2010. At baseline, participants donated blood and urine, and completed self assessment questionnaires relating to lifestyle, medical and family history \citep{allen_uk_2014,collins 2007}. As of July 2020, 488,264 participants have been recruited and genotyped. Participants completed self-guided questionnaires on centre computers with the aid of in-built help systems when prompted. Genetic data were extracted from blood as previously described \citep{bycroft_uk_2018,collins 2007}. Deoxyribonucleic acid (DNA) was extracted at baseline, and initial genetic data from Affymetrix arrays were released in May 2015 and July 2017 \citep{bycroft_uk_2018}. The first release included 150,000 participants, with 50,000 genotype using the Applied Biosystems UK Biobank Lung Exome Variant Evaluation  (UK BiLEVE) Axiom Array, and all other participants genotyped via the Applied Biosystems UK biobank Axiom Array  \citep{bycroft_uk_2018}. Both arrays share 95\% of markers. Genetic SNP arrays can use imputation to increase coverage, which was performed as described \citep{bycroft_uk_2018}. Multiallelic SNPs or those with a minor allele frequency (MAF) of < 0.01 (1\%) were removed prior to imputation, The UK10K and Haplotype Reference Consortium (HRC) reference pannels were the basis for imputation, performed by the MRC-IEU unit \citep{huang 2015, howie 2011}. Individuals self identifying as 'White British' and having similar ancestry by clustering with others of the same ancestry in PCA were included, while those with a high degree of kinship to others in the biobank were excluded. The MRC-IEU also preformed quality control during imputation, excluding individuals with a sex mismatch between self reported and genetics, or any individuals with sex-chromosome aneuploidy. For a full description of imputation, see \citep{bycroft_uk_2018}, and for a full description of in-house MRC-IEU quality control see \citep{ruth_mitchell_mrc_2019}. 
+
+Phenotypic data were obtained for the following fields for use in three studies in this chapter (Table \ref{tab:Studies_MRchapter}). Three studies were conducted. First, a study of the influence of chronotype on self-reported mental health related traits. Then, a study of the effect of chronotype on social support and lifestyle factors. Lastly, a study encompassing the influence of chronotype on measures of eye health, taken by the best keratometry index measurements in the UKBB. When a categorical response has multiple values, they are separated into binary $1/0$ outcomes for individual analysis. 
+
+\input{chapter3/HighRes_Fig_Tables/Signif/Studies_MRchapter}
+
+\subsection{Performing GWAS}
+After harmonizing outcomes, PLINKv1.9 was used to perform GWAS against each trait studied, including chronotype \citep{chang_second-generation_2015}. During each GWAS, the following procedure was followed.
+
+Quality control was carried out using PLINK R v3.5.0 \citep{r_core_team_r:_2013}. Variants which had a particularly high missing call rate (>0.1) were removed. Individuals with a missing rate of > 0.05 were also excluded. A 50kb window with a step size of 5 variants at a time and a 0.5 r2 threshold was used to remove variants in high LD. 
+
+Variants with a MAF <0.01 were also excluded. For each analysis, covariates included gender and the first ten principle components. PLINK was used to calculate the principal components using default settings. Prior to any testing, final QC steps were taken per trait, removing variants based on a case control missing rate likelihood of < 0.001 when a trait was binary, missing rate 0.05 or a Hardy Weinberg Equilibrium p < 1E-8. 
+
+Linear models were run on all continuous traits, and logistic regression models were used for all binary traits. To make the comparison of effect sizes between binary and continuous outcomes efficient, the $\beta$ values from the generalized linear model during logistic regression were retained using PLINK's "--beta" flag. $\beta$, standard error ($se$), and p-values from each GWAS were kept for the data harmonization process.
+
+\subsection{Data Harmonization}
+When mining each GWAS for the discovery SNPs from 23andMe, a harmonization process was performed using the R TwoSampleMR package \citep{hemani_mr-base_2018}. First, SNPs from the discovery set were located in the exposure GWAS summary statistics. The strandedness of each GWAS was checked to make sure that at each allele, the minor and major alleles were equal. If these were reversed, effect sizes were modified to correct for this. Pallendromic SNPs, which contain alleles represented by the same base pairs on both strands of DNA, were discarded. If SNPs were not present, proxies were found using PLINK with an $R^2$ of at least 0.8, and strand was checked again \citep{plink}. Next, SNPs in the exposure GWAS set were clumped by LD to ensure statistical independence. In a window of 10000 base pairs, an $R^2$ cutoff of < 0.001 was set to obtain haplotype blocks, and the European reference panel of the 10,000 Genomes Project \citep{10kgenomes}. This left 18 SNPs for use as valid, independent IVs. The effect sizes and standard errors from each GWAS were extracted for these 18 SNPs used in this analysis. 
+
+\subsection{Causal Inference Modelling}
+In practice, meta-analyses often use an inverse-variance weighted average to account for the sample size (reflected in variance) of studies included in the meta-analysis. The IVW methods uses the Wald ratios of each SNPs as the "study" the meta-analysis, with a pooled estimate seen in the forest plots below (see results) driving home the meta-analytic nature of multi-SNP MR. Rather than calculate Wald ratios individually, the outcome GWAS $\beta$s or Odds Ratios are regressed on the exposure. The slope of the regression line indicates the strength of the effect, as an increase in the unit of outcome per unit of the exposure\cite{burgess_interpreting_2017}. 
+In a IVW metaanalysis, IVW estimate is calculated by:
+\begin{equaton}
+\widehat{\beta}_{Yj} = \theta_{IVW}\widehat{\beta}_{Xj} + \epsilon_{Ij}; \epsilon_{Ij} \sim N(0,\sigma^2se(\widehat{\beta}_{Yj})^2)
+\end{equaton}
+
+where $\widehat{\theta}$ is the inverse variance weighted average, $se$ is the standard error, and other terms are as above, and I is an error term.
+
+
+
+Similarly to other meta-analysis frameworks, by weighting effect sizes by their inverse variance, stronger SNPs make a larger contribution to the overall effect size obtained. Compared to other methods used in this analysis, the IVW method has the strongest power simply by not discarding any SNP instruments (Mode) or shrinking their variance (MR Egger). It strongly assumes all instruments are valid, requiring the slope of the meta-regression line to be constrained to zero. Any potential pleiotropy or extreme heterogeneity among SNPs would draw the gradient of the regression line away from the true slope. Heterogeneity can occur when individual SNPs do not converge on an estimate, and can be estimate by Cochran's $Q$ \citep{higgins_cochrane_2011}. In this context, heterogeneity may be a sign of horizontal pleiotropy, wherein SNPs effect the outcome by their influence on other confounding traits \cite{burgess_review_2017}. In any IVW-based meta-analysis, either fixed or random effects maybe modeled \cite{higgins_cochrane_2011}. A fixed effect model applied to MR assumes all instruments are valid, whereas modeling random effects allows for balanced horizontal pleiotropy to be present if it is independent of SNPs effects on the exposure. This is termed the Instrument Strength Independent of Direct Effect (InSIDE) assumption, which is not currently testable. The IVW method also relies on the No Measurement Error (NOME) assumption, assuming SNP-exposure associations are accurate. This can be accessed by calculating F-statistics to test the degree of association between discovery SNPs and the exposure of interest. 
+
+A figure comparing the IVW method with the pleiotropy- and assumption-mitigating factors below is shown in \ref{fig:MR_Scatters}.  Each scatter plot depicts an outcome regressed on an exposure with multiple SNPs. The slope is the estimate of the causal effect. If there is no horizontal pleiotorpy, or the pleiotropy is balanced between outcome and effect, inverse-variance weighted regression is used, where the contribution of each SNP is weighted by its inverse variance, so variable SNPs contribute less to the overall study effect size. If directional pleiotropy is suspected, then constraining the intercept to be at zero will allow bias into the model (gray arrow). However if the intercept is not constrained via Egger regression, an unbiased estimate can be obtained if the instrument-exposure and pleiotropy are uncorrelated (InSIDE assumption). If most instruments are valid (black), and some are invalid (red), a median-based approach will provide an unbiased estimate (black), whereas IVW linear regression would provide a biased estimate (grey). If SNPs are horizontally pleiotropic, they will return biased estimates. Using a mode-based estimator, it is possible to clustering SNPs based on their estimates (grey lines). If the majority of the SNPs are in a cluster which satisfies IV assumptions, then then mode-based estimator is unbiased, if not under powered.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\linewidth]{chapter3/HighRes_Fig_Tables/Signif/mod_elife-34408-fig1-v1.jpg}
+	\caption[Mendelian Randomization Method Scatter Plots]{Mendelian Randomization methods have different assumptions. Each scatter plot depicts an outcome regressed on an exposure with multiple SNPs. The slope is the estimate of the causal effect. A) If there is no horizontal pleiotorpy, or the pleiotropy is balanced between outcome and effect, inverse-variance weighted regression is used, where the contribution of each SNP is weighted by its inverse variance, so variable SNPs contribute less to the overall study effect size. B) If directional pleiotropy is suspected, then constraining the intercept to be at zero will allow bias into the model (gray arrow). However if the intercept is not constrained via Egger regression, an unbiased estimate can be obtained if the instrument-exposure and pleiotropy are uncorrelated (InSIDE assumption). C) If most instruments are valid (black), and some are invalid (red), a median-based approach will provide an unbiased estimate (black), whereas IVW linear regression would provide a biased estimate (grey). D) If SNPs are horizontally pleiotropic, they will return biased estimates. Using a mode-based estimator, it is possible to clustering SNPs based on their estimates (grey lines). If the majority of the SNPs are in a cluster which satisfies IV assumptions, then then mode-based estimator is unbiased, if not under powered. Image credit: \cite{hemani_evaluating_2018}.}
+	\label{fig:MR_Scatters}
+\end{figure}
+
+\subsection{Testing for Evidence of Pleiotropy}
+When an MR study, with multiple valid instruments, is considered as a meta-analysis, meta-analytic tools used to detect bias in studies can be used to detect bias in SNPs. Egger proposed a method for detecting small study bias in meta-analyses, and this has been adopted into an MR context \citep{bowden_framework_2017,bowdenMendelianRandomizationInvalid2015b}. The Wald ratios of each SNP are used in meta-regression by taking the inverse IVW weights used in IVW analysis, without modeling the intercept. It provides a causal estimate similar to IVW but adjusted for horizontal pleiotropy which would otherwise invalidate IVW \cite{bowdenMendelianRandomizationInvalid2015b}. As the intercept is unconstrained, it estimates the average pleiotropic effect across the SNPs, and the slope provides an estimate of the pleiotropic effect. If the intercept, while not constrained, is not statistically different than zero, then this suggest lack of horizontal pleiotropy and the instruments are assumed valid. To accomplish this, the MR-Egger method relaxes assumption 3 in \ref{fig:MR_Dag}. MR-Egger relies on not violating the InSIDE assumption (see above). 
+
+MR-Egger regression is an extension of IVW regression. Instead of assuming no intercept term, an intercept is estimated:
+\begin{equation}
+\widehat{\beta}_{Yj} = \theta_{0E} + \theta_{1E}\widehat{\beta}_{Xj} + \epsilon_{Ej}; \epsilon_{Ej} \sim N(0,\sigma^2se(\widehat{\beta}_{Yj})^2)
+\end{equation}
+where $\theta_{0E}$ is the intercept and $\theta_{1E}$ the MR Egger estimate.
+If the intercept is equal to zero, then the IVW method and MR-Egger will be equivalent \citep{burgess_interpreting_2017}. During the IVW process in MR-Egger, the effect sizes of each SNP must have the same sign, and this decreases the variation between them \citep{bowdenMendelianRandomizationInvalid2015b}. This renders the MR-Egger method the lowest powered method employed in this chapter, though its robustness to horizontal pleiotropy and ability to test for this in the intercept make it a valuable contribution to methods. 
+
+
+\subsection{Assuming Weak Instrumental Variables: Median and Mode}
+The weighted median estimate again relies on Wald ratios. First, the Wald ratio is calculated for each SNP. Then, as in the IVW method, a measure of central tendancy is used to produce an overall effect size - but instead of the mean, the median is used. In an unweighted analysis it would be assumed that over half of the instruments are valid, while in an weighted median analysis the assumption is that the at least 50\% of the weight of the instruments are valid themselves \citep{bowden_consistent_2016}. This approach is robust to directional pleiotropy when compared to a simple IVW meta-analysis. It is also more robust to outliers than either IVW or Mr Egger. 
+
+Comparative studies have demonstrated that the power of the weighted median method is similar to the IVW. Moreover, it is not constrained by the InSIDE assumption, contrary to MR Egger, and for it to be valid only half of instruments need to be unbiased \cite{hemani_evaluating_2018}.  See \ref{fig:MR_Scatters} C for a graphical explanation. 
+
+The mode-based estimator (MBE) clusters Wald ratios before calculating random effects in an IVW meta-analysis \citep{hartwigRobustInferenceSummary2017a}. The simple MBE uses unweighted analysis, while the weighted MBE uses inverse variance weighting. First, a smooth empirical density function is calculated for each Wald ratio and are then clustered. The ZEMPA assumption (Zero Modal Pleiotropy Assumption) states that the biggest cluster with the same ratio estimates will be valid instruments. Thus, the MBE can provide a valid causal estimate when the largest number of estimates come from valid IVs, even if a majority (those in smaller clusters) are invalid. While not all snps have to be valid IVs, fewer valid IVs is equivalent to fewer samples actually used, and results in lost power compared to IVW methods. 
+I calculated both weighted (by IVW) and unweighted (Wald ratio) methods. See \ref{fig:MR_Scatters} D for a graphical explanation. 
+
+\subsection{Sensitivity, Bias, and Directionality}
+
+To check if possible pleiotrophic or invalid SNPs are dominating models run, I performed a leave-one-out analysis for each experiment. In a leave-one-out senario, the inverse variance weighted average is run using all SNPs except one. This is repeated for every SNP, resulting in 10 IVW average effect sizes in the case of 10 SNPs in the analysis. One outlier effect size would indicate that the SNP left out skews the analysis and may be removed for being an outlier \citep{hemaniOrientingCausalRelationship2017}.
+
+I composed funnel plots to access pleiotopic effects. Originally designed to identify potential biases arising from small studies in meta-analysis, funnel plots are a graphical method of accessing bias, by plotting the effect size against sample size, noting that smaller effects should belong to smaller effect sizes and that there should be a degree of balance in the signs of the effect sizes \citep{eggerBiasMetaanalysisDetected1997a}. Egger proposed a regression method to test the asymmetry of this relationship, which is the basis of the MR Egger method \citep{bowdenMendelianRandomizationInvalid2015b}. Cochran's $Q$ can be used in combination with funnel plots to access the degree of pleiotropy. $Q$ is a measure of heterogeneity among calculates the sum of squared differences between SNPs and the pooled effect, and creates a $\chi^2$ test statistic for comparison. The $Q$ statistic is well powered as the number of SNPs increases, indicating that evidence of overdispersion itself does not indicate pleiotropy \citep{Lawlor_2008,Rees_wood, burgess_review_2017}. Even for a low p-value, indicating high heterogeneity, I have investigated funnel plots, as severe asymmetry would suggest directional pleiotropy and violate MR-IVW assumptions. If symmetry is observed, both fixed- and random-effects IVW would produce similar results \cite{bowden_framework_2017}, and if asymmetry is observed then estimates would differ, and Median or Mode methods should be considered. In this chapter, the IVW analysis is considred the gold standard; if it is significant, other methods are used to confirm results in the presence of pleiotropy or heterogeneity. If all methods of analysis for an experiment concur, the potential causal effect of chronotype is considered more plausible.
+
+I used the Steiger test to access the directional of all causative analyses post-hoc \citep{hemaniOrientingCausalRelationship2017}.  This method tests whether the selected IVs are more strongly associated with the exposure than the outcome. The Steiger test first assesses which variables (exposure or outcome) are influenced by the SNPs used, by testing if the SNPs explain more variance in the exposure than in the outcome with a modified $Z$ statistic. If the p-value of the IVW estimate and the Steiger estimate are both significant, the sign of the $Z$ statistic is used to assign the correct causal direction between exposure and outcome.
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Results}
 
-All figures and tables should be cited in the main text as Figure~\ref{fig1}, Table~\ref{tab1}, etc.
+All figures and tables should be cited in the main text as Figure~\ref{forestIVW}, Table~\ref{tab1}, etc.
+
+\subsection{To remove: database-minded chronotype - trait relationships}
+
+%% table: traits with genome-wide signifiance in EpiGraphDB
+
+%% figure: re-analysis forest plots of significant traits
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figs/forestIVW.pdf}
+	\caption{Causal relationshps between exposure to chronotype and various traits. Causal associations mined from EpiGraphDB (IVW p < 5e-8) were analyzed using two chronotype exposure measures. Outcomes are listed with trait and study accession number. Exposure ebi-a-GCST003837 reflects SD increase in chronotype on a continuous morning - evening scale. Exosure ukb-a-11 represents odds of an evening chronotype. Effect sizes are from fixed-effects inverse variance weighted analyses with 95\% confidence intervals. False discovery rate-corrected pvalues are shown.}
+	\label{forestIVW}
+\end{figure}
+
+\subsection{}
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
