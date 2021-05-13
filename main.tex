@@ -175,16 +175,16 @@ MR employs IV analysis for causative inference. Any causative modeling study can
   \item The IV must not associate directly with the outcome, except as mediated by the exposure.
 \end{enumerate}
 
-
+This study ... ... ... ... 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materials and Methods}
 
-A general workflow for this study is depicted in Figure~\ref{fig:MR_Workflow}. Using the EpiGraphDB R API v1.0 \cite{liu_epigraphdb_2020}, results of precomputed Mendelian Randomization studies were obtained with the following parameters: exposure trait either "Morning/evening person (chronotype)" or "Chronotype", with a p-value threshold of 5e-8 (GWAS genome-wide signifiance). Results were filtered to significant fixed-effects inverse-variance weighted multi-snp meta-analyses (IVW), with 120 significant associations retained, and additionally manually curated to keep associations between chronotype and mental or cardiometabolic health. Chronotype/chronotype and chronotype/sleep duration studies were discarded, leaving 16 potential studies for investigation,  Figure~\ref{fig:MR_Workflow} first step.
+A general workflow for this study is depicted in Figure~\ref{fig:MR_Workflow}. Using the EpiGraphDB R API v1.0 \cite{liu_epigraphdb_2020}, results of pre-computed Mendelian Randomization studies were obtained with the following parameters: exposure trait either "Morning/evening person (chronotype)" or "Chronotype", with a p-value threshold of 5e-8 (GWAS genome-wide significance). Results were filtered to significant fixed-effects inverse-variance weighted multi-SNP meta-analyses (IVW), with 120 significant associations retained, and additionally manually curated to keep associations between chronotype and mental or cardiometabolic health. Chronotype/chronotype and chronotype/sleep duration studies were discarded, leaving 16 potential studies for investigation,  Figure~\ref{fig:MR_Workflow} first step.
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figs/Analysis1/outline.png}
+	\includegraphics[width=0.9\linewidth]{Figs/Analysis1/outline.png}
 	\caption{Mendelian Randomization (MR) workflow for testing the causal influence of chronotype on traits in the EpiGraphDB database. An unbiased search for GWAS-derived two-sample MR studies was performed with chronotype or moningness/eveningness as reported exposures, and IVW results (p < 5e-8) retained. Data used in analyses were downloaded, and potential chronotype IVs filtered with Steiger filtering, LD-clumping, and stand/palindromic SNP harmonization. IVW and related MR analyses are then performed on filtered SNP summary statistics, followed by pleiotropy (MR Egger) and leave-one-out sensitivity analyses. Associations that survive multiple testing correction are then uploaded to EpiGraphDB to investigate potential confounders not present in exposure/trait analyses as reported.}
 	\label{fig:MR_Workflow}
 \end{figure}
@@ -208,7 +208,7 @@ In a IVW meta-analysis, IVW estimate is calculated by:
 
 where $\widehat{\theta}$ is the inverse variance weighted average, $se$ is the standard error, and other terms are as above, and I is an error term (see Figure~\ref{fig:MR_Workflow} third step, right).
 
-Ten significant IVW studies were then subject to four additional MR methods (see \ref{fig:MR_Workflow}, third level left).  To address unseen horizontal pleiotropy, the Egger regression was performed. \cite{bowden_framework_2017,bowdenMendelianRandomizationInvalid2015b}. The Wald ratios of each SNP are used in meta-regression by taking the inverse IVW weights used in IVW analysis, without modeling the intercept. It provides a causal estimate similar to IVW but adjusted for horizontal pleiotropy which would otherwise invalidate IVW \cite{bowdenMendelianRandomizationInvalid2015b}.
+Ten significant IVW studies were then subject to four additional MR methods (see Figure~\ref{fig:MR_Workflow}, third level left).  To address unseen horizontal pleiotropy, the Egger regression was performed. \cite{bowden_framework_2017,bowdenMendelianRandomizationInvalid2015b}. The Wald ratios of each SNP are used in meta-regression by taking the inverse IVW weights used in IVW analysis, without modeling the intercept. It provides a causal estimate similar to IVW but adjusted for horizontal pleiotropy which would otherwise invalidate IVW \cite{bowdenMendelianRandomizationInvalid2015b}.
 MR-Egger regression is an extension of IVW regression. Instead of assuming no intercept term, an intercept is estimated:
 \begin{equation}
 \widehat{\beta}_{Yj} = \theta_{0E} + \theta_{1E}\widehat{\beta}_{Xj} + \epsilon_{Ej}; \epsilon_{Ej} \sim N(0,\sigma^2se(\widehat{\beta}_{Yj})^2)
@@ -231,9 +231,9 @@ All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Results}
 
-All figures and tables should be cited in the main text as Figure~\ref{forestIVW}, Table~\ref{tab1}, etc.
 
 \subsection{To remove: database-minded chronotype - trait relationships}
 
@@ -243,110 +243,44 @@ All figures and tables should be cited in the main text as Figure~\ref{forestIVW
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figs/Analysis1/forestIVW.pdf}
+	\includegraphics[width=0.99\linewidth]{Figs/Analysis1/forestIVW.pdf}
 	\caption{Causal relationships between exposure to chronotype and various traits. Causal associations mined from EpiGraphDB (IVW p < 5e-8) were analyzed using two chronotype exposure measures. Outcomes are listed with trait and study accession number. Exposure ebi-a-GCST003837 reflects SD increase in chronotype on a continuous morning - evening scale. Exposure ukb-a-11 represents odds of an evening chronotype. Effect sizes are from fixed-effects inverse variance weighted analyses with 95\% confidence intervals. False discovery rate-corrected p-values are shown.}
 	\label{forestIVW}
 \end{figure}
 
 \subsection{Chronotype influences on metabolism, alcohol, and mental health}
 
-
-
-% omega 3 and total triglycerides
+% T2DM
 \begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Omega-3_fatty_acids.Plots.pdf}
-         \caption{}
-         \label{omega3}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Serum_total_triglycerides.Plots.pdf}
-         \caption{}
-         \label{totalTG}
-     \end{subfigure}
-        \caption{Propensity to an evening chronotype causes increased omega-3 fatty acids (A) and serum total triglycerides (B). IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{omega3tgs}
+	\centering
+         \includegraphics[width=0.7\textwidth]{Figs/Analysis2/Chronotype_vs_Type_2_diabetes.Plots.pdf}
+    \caption{An evening chronotype causes increased odds of a type 2 diabetes mellitus diagnosis. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panel depicts leave-one-out sensitivity analyses with the IVW method.}
+	\label{beer}
 \end{figure}
 
-% total ffa and nicorandil
+% beer
 \begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Total_fatty_acids.Plots.pdf}
-         \caption{}
-         \label{tffa}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Treatment_medication_code:_nicorandil.Plots.pdf}
-         \caption{}
-         \label{nicorandil}
-     \end{subfigure}
-        \caption{Chronotype causes increased total fatty acids (A) and and a decreased likelihood of treatment with nicorandil. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{fffanicorandil}
+	\centering
+         \includegraphics[width=0.7\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Average_weekly_beer_plus_cider_intake.Plots.pdf}
+    \caption{An evening chronotype causes weekly (alcoholic) beer and/or cider intake. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panel depicts leave-one-out sensitivity analyses with the IVW method.}
+	\label{beer}
 \end{figure}
 
 
-% total T2dm and alcohol
+
+% bipolar
 \begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Type_2_diabetes.Plots.pdf}
-         \caption{}
-         \label{t2dm}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Average_weekly_beer_plus_cider_intake.Plots.pdf}
-         \caption{}
-         \label{beer}
-     \end{subfigure}
-        \caption{Chronotype causes increased odds of a type 2 diabetes mellitus diagnosis (A) and and an increased weekly beer/cider intake. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{t2dmalcohol}
+	\centering
+    \includegraphics[width=0.7\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Bipolar_disorder.Plots.pdf}
+    \caption{An evening chronotype contributes to the likelihood of a bipolar disorder diagnosis. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panel depicts leave-one-out sensitivity analyses with the IVW method.}
+	\label{bipolar}
 \end{figure}
 
-% total bp and tired
-\begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Bipolar_disorder.Plots.pdf}
-         \caption{}
-         \label{t2dm}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Frequency_of_tiredness___lethargy_in_last_2_weeks.Plots.pdf}
-         \caption{}
-         \label{beer}
-     \end{subfigure}
-        \caption{An evening chronotype contributes to a bipolar disorder diagnosis (A) and self-reported lethargy. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{bplethargy}
-\end{figure}
 
-% total test and tired
-\begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Testosterone_levels.Plots.pdf}
-         \caption{}
-         \label{testosterone}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Waking_too_early.Plots.pdf}
-         \caption{}
-         \label{waking}
-     \end{subfigure}
-        \caption{An evening chronotype contributes to increased serum testosterone (A) and a decrease in odds of waking early. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{t2dmalcohol}
-\end{figure}
+
+
+
+
 
 \input{Figs/Analysis2/FDR_Signif_CHR_Exposure}
 
@@ -361,21 +295,21 @@ All figures and tables should be cited in the main text as Figure~\ref{forestIVW
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figs/Analysis3/gBig.png}
+	\includegraphics[width=\linewidth]{Figs/Analysis3/gBig.png}
 	\caption{Causal and confounding relationships between chronotype exposures (green nodes) and traits (red nodes). White nodes and potential confounding variables. Edges indicate the direction of causality (arrows). Green edges = causal relationships; Lavender = colliders, orange = confounders, yellow = intermediates, blue = reverse intermediates.}
 	\label{gBig}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figs/Analysis3/morning_bipolar.png}
+	\includegraphics[width=0.7\linewidth]{Figs/Analysis3/morning_bipolar.png}
 	\caption{An evening chronotype associates with bipolar disorder. In addition to a valid association between chronotype and bipolar disorder, an intermediate association (p < 1e-5) was found for ER+ breast cancer.}
 	\label{chronoBipolar}
 \end{figure}
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figs/Analysis3/chronoBeer.png}
+	\includegraphics[width=0.7\linewidth]{Figs/Analysis3/chronoBeer.png}
 	\caption{An evening chronotype associates with increased beer and cider consumption. There is a potential bi-directional relationship between increased alcohol intake and an evening chronotype both directly (blue lines) and mediated by lack of physical activity and elevated UBE2G2. Chronotype may influence the number of sexual partners, which may influence average alcohol intake (yellow). There are numerous poential confounders relating body composition, loneliness, and diet.}
 	\label{chronoBipolar}
 \end{figure}
