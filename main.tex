@@ -171,7 +171,7 @@ $^{6}$ NIHR Biomedical Research Centre, University Hospital Birmingham, Birmingh
 % Fix references (?)s
 % Abstract
 % Conclusions
-% Longtable the supplemental big tables, reference in text
+% Longtable the supplemental big tables, reference in text (fix this)
 % Supplemental figs layout and reference in text
 % Results
 % Discussion
@@ -182,10 +182,6 @@ $^{6}$ NIHR Biomedical Research Centre, University Hospital Birmingham, Birmingh
 
 \section{Introduction}
 
-
-
-
-\subsection{Previous Causal studies involving chronotype exposure}
 With the advent of large biobank cohorts to provide GWAS, there have been several recent studies looking at the causal influence between chronotype (morningness or eveningness) exposures and both neurobehavioral/psychiatric and cardiometabolic related outcomes. Lind and colleagues found significant genetic correlations between oversleeping, insomnia, and undersleeping exposures with an outcome of post traumatic stress disorder \cite{lind_molecular_2020}, but when testing for causality via did not find evidence for causal effects of sleep phenotypes on post traumatic stress. Adams and Neuhausen were interested in the interplay between chronotype and free fatty acid circulation, and also between free fatty acids and type two diabetes \cite{adams_evaluating_2019}. So as to evaluate this, they conducted a two Mendelian randomization studies using two sample data, and found that morning chronotype is associated with lower total fatty acid levels (IVW $\beta$ -0.21, p = 0.02) and that elevated fatty acid levels are associated with a decrease in diabetes, granting a protective effect (IVW $\beta$ -0.23, p = 0.01). They then extended their analysis to include subtypes of free fatty acids and their conclusions held, indicating that a morning chronotype is associated with lower mono-unsaturated fatty acid intake. Richmond and colleagues sought to model sleep traits and risk of breast cancer using Mendelian randomization methods, using chronotype, sleep duration, and insomnia GWAS for instrumental variable selection \cite{richmond_investigating_2019}. They modeled the UK Biobank in a one-sample fashion, using a two-stage least squares regression approach instead of splitting the cohort into two non-overlapping samples, and showed a morning chronotype to be protective against breast cancer (Odds Ratio 0.85). Two sample modeling with an independent cohort supported these findings, showing morning chronotype (IVW OR 0.88) was protective against breast cancer, while increased sleep duration has a detrimental effect (IVW OR 1.19). Gibson investigated bi-directional causal effects between smoking and sleep duration and chronotype \cite{gibson_evidence_2019}. They found no clear evidence that smoking initiation influenced sleep behaviors directly, nor evidence for causal effects between chronotype on smoking behavior. However, they did find evidence that insomnia could lead to an increase in smoking behavior (IVW $\beta$ 1.21, p = 0.02) in an under-powered analysis. Treur modelled caffeine consumption and sleep traits, including chronotype, sleep duration, and history of insomnia \cite{treur_investigating_2018}. While the association between caffeine consumption and disturbed sleep is well known, and their analysis did show strong genetic correlations between those traits, an extensive two sample MR using IVW and MR-Egger meta-analyses failed to produce significant causal associations. On a wider scale, Lane and colleagues used MR analysis as a follow-up to their first GWAS of chronotype using the UKBB \cite{lane_genome-wide_2016}. They found significant associations between evening phenotype and years of education increasing and self reported schizophrenia diagnosis, and associations between a morning chronotype and a decreased body mass index (BMI). 
 
 These studies, each taken in isolation, paint compelling evidence of relationships between chronotype and metabolic traits. However, if analyzed as a whole under multiple testing, results would often fail to achieve statistical significance. Additionally, most studies fail to address confounding factors which may be identifiable by performing MR tests between exposures and potential confounders. In concurrence with these studies being conducted, large databases of genome-wide association study (GWAS) and MR studies have been build, including GWAS Catalog \cite{buniello_nhgri-ebi_2019} and MR-Base \cite{hemani_mr-base_2018}. In this study, we have taken advantage of GWAS study statistics and MR analyses surrounding chronotype to identify causal relationships between exposure to chronotype and several cardiometabolic and mental health related traits. We have additionally mined MR repositories for potential confounding factors, identifying both non-detrimental intermediate analyses (explanitory mediators and reverse-mediators) and confounders which will need to be controlled for in mechanistic studies used to validate MR experiments.
@@ -246,14 +242,11 @@ All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Results}
-
-
-\subsection{To remove: database-minded chronotype - trait relationships}
+Initially, 120 prospective studies were identified using EpiGraphDB containing chronotype as an exposure \ref{AllDB_ChronoMRExposure}. Of these, there were 28 primary associations directly relevant to this study, including measures of alcohol intake, bioplar disorder, testosterone, triglycerides, and T2DM (type 2 diabetes melletus); all with IVW p-values of < 5e-8. Because the analyses were performed in a high-throughput environment, we re-analyzed each relevant study with the IVW method using summary statistics available, Figure~\ref{forestIVW}. After filtering and quality control previously described, 10 studies held up to a false discovery rate of p < 0.05. The bi-directional nature of the forest plot exists because of the different nature of the chronotype exposure studies (treating morning or evening chronotype as case/control). Each of the 10 studies were further analysed with a tendency toward eveningness reflecting a high $\beta$ value in the exposure effect size. 
 
 %% table: traits with genome-wide significance in EpiGraphDB
 \input{Figs/Analysis1/AllDB_ChronoMRExposure}
 %% figure: re-analysis forest plots of significant traits
-
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.99\linewidth]{Figs/Analysis1/forestIVW.pdf}
@@ -261,7 +254,7 @@ All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_
 	\label{forestIVW}
 \end{figure}
 
-\subsection{Chronotype influences on metabolism, alcohol, and mental health}
+\subsection{Chronotype influences on diabetes, alcohol consumption, and bipolar disorder}
 
 % T2DM
 \begin{figure}[htbp]
@@ -278,8 +271,6 @@ All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_
     \caption{An evening chronotype causes weekly (alcoholic) beer and/or cider intake. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panel depicts leave-one-out sensitivity analyses with the IVW method.}
 	\label{beer}
 \end{figure}
-
-
 
 % bipolar
 \begin{figure}[htbp]
