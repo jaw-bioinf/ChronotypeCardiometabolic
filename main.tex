@@ -255,16 +255,16 @@ Initially, 120 prospective studies were identified using EpiGraphDB containing c
 \end{figure}
 
 \subsection{Chronotype influences on diabetes, alcohol consumption, and bipolar disorder}
-The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included 7 independent SNPs, see Supplemental Table~\ref{FDR_Signif_CHR_Exposure}. The weakest association was with the MR Egger method, $\beta$ = 0.73, which while non-significant (p = 0.04) did not reveal evidence of horizontal pleiotropy (intercept p-value = 0.98) or heterogeneity (Egger Q p-value 0.99). The IVW analysis and weighted median analysis each concurred (p = 0.002 and 0.009), suggesting little loss of associative singal even if some of the 7 SNPs were biased by pleiotropy. 
+The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included 7 independent SNPs, see Supplemental Table~\ref{FDR_Signif_CHR_Exposure}. The weakest association was with the MR Egger method, $\beta$ = 0.73, which while non-significant (p = 0.04) did not reveal evidence of horizontal pleiotropy (intercept p-value = 0.98) or heterogeneity (Egger Q p-value 0.99). The IVW analysis and weighted median analysis each concurred (p = 0.002 and 0.009), suggesting little loss of associative signal even if some of the 7 SNPs were biased by pleiotropy. Leave one out sensitivity analyses suggests that no one IV dominates the model, and all methods have similar effect sizes as judged by slope, Figure~\ref{t2dm}. 
 % T2DM
 \begin{figure}[htbp]
 	\centering
          \includegraphics[width=0.7\textwidth]{Figs/Analysis2/Chronotype_vs_Type_2_diabetes.Plots.pdf}
     \caption{An evening chronotype causes increased odds of a type 2 diabetes mellitus diagnosis. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panel depicts leave-one-out sensitivity analyses with the IVW method.}
-	\label{beer}
+	\label{t2dm}
 \end{figure}
 
-Chronotype has a weaker but more statistically significant association with the amount of alcoholic beer or cider drinks consumed weekly, with the increase reflected in pints per week consumed (mean among all respondents of 3/week). With an MR Egger intercept p-value of 0.31 and a significant Egger regression coefficient (p-value = 0.04), there is strong evidence on initial analysis that the trait may not be subject to horizontal pleiotropy. The weighted median and IVW methods were again strongest ($\beta$ = 0.089 and 0.79, p = 4.4e-6 and 9.7e-4). There was, however, evidence among the 82 SNPs which passed thresholding for strong heterogeneity (Cochrane Q = 333), suggesting pleiotropy or moderating factors for further investigation even in the absence of such suggestions from the MR Egger intercept significance test.
+Chronotype has a weaker but more statistically significant association with the amount of alcoholic beer or cider drinks consumed weekly, with the increase reflected in pints per week consumed (mean among all respondents of 3/week). With an MR Egger intercept p-value of 0.31 and a significant Egger regression coefficient (p-value = 0.04), there is strong evidence on initial analysis that the trait may not be subject to horizontal pleiotropy. The weighted median and IVW methods were again strongest ($\beta$ = 0.089 and 0.79, p = 4.4e-6 and 9.7e-4). There was, however, evidence among the 82 SNPs which passed thresholding for strong heterogeneity (Cochran Q = 333), suggesting pleiotropy or moderating factors for further investigation even in the absence of such suggestions from the MR Egger intercept significance test. Heterogeneity among SNPs can be observed in Figure~\ref{beer}, while the leave one out analysis shows overlapping confidence intervals in each iteration, suggesting homogeneity on the whole.
 
 % beer
 \begin{figure}[htbp]
@@ -274,6 +274,7 @@ Chronotype has a weaker but more statistically significant association with the 
 	\label{beer}
 \end{figure}
 
+The influence of chronotype on bipolar disorder appears wildly varied, with different SNPs with large standard errors apparent in Figure~\ref{bipolar}. The Cochran's Q statistic (Q = 149, p= 2e-24) echoes the visible heterogeneity of SNPs in the analysis. Nevertheless, there is a consistent $\beta$ effect size among the IVW weighted median, and weighted mode analyses (0.188, 0.175, and 0.181) with are highly statistically significant (p = 4e-4, 1e-11, and 3e-6 respectively). This presents a modest but suggestive signal that an evening chronotype may lead ot an increase in activation of pathways leading to bipolar disorder. The test for horizontal pleiotropy, in contrast to the Q statistic, does not suggest horizontal pleiotropy (p = 0.47).
 
 % bipolar
 \begin{figure}[htbp]
