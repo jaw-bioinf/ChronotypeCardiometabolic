@@ -234,7 +234,7 @@ If the intercept is equal to zero, then the IVW method and MR-Egger will be equi
 
 Inverse variance-weighted median analyses were performed, using the median of the Wald ratios as an effect size. Unweighted analyses assume that over half of the instruments are valid, while in a weighted median analysis the assumption is that the at least 50\% of the weight of the instruments are valid themselves \cite{bowden_consistent_2016}. This approach is robust to directional pleiotropy when compared to a simple IVW meta-analysis.
 
-The mode-based estimator (MBE) clusters Wald ratios before calculating random effects in an IVW meta-analysis \cite{hartwigRobustInferenceSummary2017a}. The simple MBE uses unweighted analysis, while the weighted MBE uses inverse variance weighting. First, a smooth empirical density function is calculated for each Wald ratio and are then clustered. The ZEMPA assumption (Zero Modal Pleiotropy Assumption) states that the biggest cluster with the same ratio estimates will be valid instruments. These were used in each analysis, resulting in fewer SNPs and less power, but an increase in potential robustness to horizontal pleiotropy.
+The mode-based estimator (MBE) clusters Wald ratios before calculating random effects in an IVW meta-analysis \cite{hartwigRobustInferenceSummary2017a}. The simple MBE uses unweighted analysis, while the weighted MBE uses inverse variance weighting. First, a smooth empirical density function is calculated for each Wald ratio and are then clustered. The Zero Modal Pleiotropy Assumption states that the biggest cluster with the same ratio estimates will be valid instruments. These were used in each analysis, resulting in fewer SNPs and less power, but an increase in potential robustness to horizontal pleiotropy.
 
 Heterogeneity can occur when individual SNPs do not converge on an estimate; this was estimated by Cochran's $Q$ \cite{higgins_cochrane_2011}. In this context, heterogeneity may be a sign of horizontal pleiotropy, wherein SNPs effect the outcome by their influence on other confounding traits \cite{burgess_review_2017}. To inspect SNPs for outliers, we performed leave-one-out sensitivity analyses using the IVW method, leaving out one SNP in each analysis. 
 
@@ -311,7 +311,7 @@ Each of the 10 exposure/outcome analyses were included in a confounder analysis,
 
 Not all MR analyses are beset by confounders, however. The relationship between exposure to an evening chronotype and bipolar disorder was not found to be influenced by a statistically significant confounder or collider. In addition to the direct relationship between chronotype and bipolar disorder, a mediator of the odds of ER+ breast cancer was discovered, see Figure~\ref{chronoBipolar}. The relationship from chronotype to cancer ($\beta$ 0.32) was stronger than the unmediated relationship directly to bipolar ($\beta$ 0.17), but weaker than the possible relationship of breast cancer to bipolar disorder ($\beta$ 0.42). 
 
-As a last example study, the relationship between exposure to an evening chronotype and an increase of beer/wine intake was explored. There is a possible bi-directional relationship between chronotype and beer/alcohol intake, mediated by reverse-intermediates of a lack of physical activity (types of physical activity in the last 4 weeks: none of the above) and concentration of UBE2G2. Additionally, direct intermediates include the lifetime number of sexual partners. No colliders were present, but several potential confounders were identified which may need to be conditioned on, depending on study design. These included dietary consumption (milk type and coffee consumed), loneliness and isolation, hip circumference, and other metabolite measures. See Figure~\ref{chronoBeer}.
+As a last example study, the relationship between exposure to an evening chronotype and an increase of beer/wine intake was explored. There is a possible bi-directional relationship between chronotype and beer/alcohol intake, mediated by reverse-intermediates of a lack of physical activity (types of physical activity in the last 4 weeks: none of the above) and concentration of the UBE2G2 protein. Additionally, direct intermediates include the lifetime number of sexual partners. No colliders were present, but several potential confounders were identified which may need to be conditioned on, depending on study design. These included dietary consumption (milk type and coffee consumed), loneliness and isolation, hip circumference, and other metabolite measures. See Figure~\ref{chronoBeer}.
 
 \begin{figure}[htbp]
 \begin{subfigure}{.35\linewidth}
@@ -398,10 +398,19 @@ Our findings have revealed potential causal associations between chronotype and 
 
 \noindent 
 \begin{tabular}{@{}ll}
-MDPI & Multidisciplinary Digital Publishing Institute\\
-DOAJ & Directory of open access journals\\
-TLA & Three letter acronym\\
-LD & Linear dichroism
+GWAS & Genome-wide association study
+MR & Mendelian randomization
+IVW & Inverse‐variance weighted
+OR & Odds ratio
+SNP & Single nucleotide polymorphism
+LD & linkage disequilibrium
+IV & Instrumental variable
+MBE & mode-based estimator
+FDR & alse discovery rate
+T2DM & Type 2 diabetes melletus
+ER+ & Estrogen Receptor positive
+VLDL & Very low density lipoprotein
+
 \end{tabular}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
