@@ -246,10 +246,8 @@ All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Results}
-Initially, 120 prospective studies were identified using EpiGraphDB containing chronotype as an exposure \ref{AllDB_ChronoMRExposure}. Of these, there were 28 primary associations, with IVW p-values of < 5e-8, directly relevant to this study, including measures of alcohol intake, bipolar disorder, T2DM (type 2 diabetes mellitus) as well as testosterone and triglyceride levels. Since the analyses were performed in a high-throughput environment, we re-analyzed each relevant study with the IVW method using summary statistics( Figure~\ref{forestIVW}). Following filtering and quality control, 10 studies held up to a false discovery rate of p < 0.05. The bi-directional nature of the forest plot exists due the different nature of the chronotype exposure studies (treating morning or evening chronotype as case/control). Each of the 10 studies were further analysed with a tendency toward eveningness reflecting a high $\beta$ value in the exposure effect size. 
+Initially, 120 prospective studies were identified using EpiGraphDB containing chronotype as an exposure,. Of these, there were 28 primary associations, with IVW p-values of < 5e-8, directly relevant to this study, including measures of alcohol intake, bipolar disorder, T2DM (type 2 diabetes mellitus) as well as testosterone and triglyceride levels. See Appendix Table 1. Since the analyses were performed in a high-throughput environment, we re-analyzed each relevant study with the IVW method using summary statistics( Figure~\ref{forestIVW}). Following filtering and quality control, 10 studies held up to a false discovery rate of p < 0.05. The bi-directional nature of the forest plot exists due the different nature of the chronotype exposure studies (treating morning or evening chronotype as case/control). Each of the 10 studies were further analysed with a tendency toward eveningness reflecting a high $\beta$ value in the exposure effect size. 
 
-%% table: traits with genome-wide significance in EpiGraphDB
-\input{Figs/Analysis1/AllDB_ChronoMRExposure}
 %% figure: re-analysis forest plots of significant traits
 \begin{figure}[htbp]
 	\centering
@@ -317,7 +315,6 @@ The influence of chronotype on bipolar disorder appears substantially varied, wi
 \end{figure}
 
 Results for other 7 individual analyses are given in the supplemental materials.
-\input{Figs/Analysis2/FDR_Signif_CHR_Exposure}
 
 \subsection{Confounder case studies: bi-polar disorder and alcohol intake}
 Each of the 10 exposure/outcome analyses were included in a confounder analysis, searching via existing MR associations for possible intermediate variables. Results in full are available in the Supplementary Table~\ref{ConfounderAnalysis}. In Figure~\ref{gBig}, a directed graph was created to visually inspect the relationships between types of confounders, outcomes, and potentially causal exposures. Exposures are represented in green, reflecting the two independent GWAS analyses used to access chronotype. Outcomes are reflected in red, and potential intermediate or confounding traits as white notes. As may be evident, there are many potential confounders (111), followed in number by intermediates (52), colliders (35), and reverse intermediates (18) all with p < 1e-5 in the EpiGraphDB database. The graph shows two clusters sharing potential confounding traits (time to first cigarette and lung cancer). Both are confounders between chronotype and two outcomes: cigarettes confound omega-3 fatty acid concentration and waking too early; lung cancer also confounds omega-3 fatty acid wile also impacting average weekly beer/cider intake.
@@ -336,7 +333,7 @@ Each of the 10 exposure/outcome analyses were included in a confounder analysis,
 
 Not all MR analyses are beset by confounders, however. The relationship between exposure to an evening chronotype and bipolar disorder was not found to be influenced by a statistically significant confounder or collider. In addition to the direct relationship between chronotype and bipolar disorder, a mediator of the odds of ER+ breast cancer was discovered, see Figure~\ref{chronoBipolar}. The relationship from chronotype to cancer ($\beta$ 0.32) was stronger than the unmediated relationship directly to bipolar ($\beta$ 0.17), but weaker than the possible relationship of breast cancer to bipolar disorder ($\beta$ 0.42). 
 
-As a last example study, the relationship between exposure to an evening chronotype and an increase of beer/wine intake was explored. There is a possible bi-directional relationship between chronotype and beer/alcohol intake, mediated by reverse-intermediates of a lack of physical activity (types of physical activity in the last 4 weeks: none of the above) and concentration of the UBE2G2 protein. Additionally, direct intermediates include the lifetime number of sexual partners. No colliders were present, but several potential confounders were identified which may need to be conditioned on, depending on study design. These included dietary consumption (milk type and coffee consumed), loneliness and isolation, hip circumference, and other metabolite measures. See Figure~\ref{chronoBeer}.
+As a last example study, the relationship between exposure to an evening chronotype and an increase of beer/wine intake was explored. There is a possible bi-directional relationship between chronotype and beer/alcohol intake, mediated by reverse-intermediates of a lack of physical activity (types of physical activity in the last 4 weeks: none of the above) and concentration of the UBE2G2 protein. Additionally, direct intermediates include the lifetime number of sexual partners. No colliders were present, but several potential confounders were identified which may need to be conditioned on, depending on study design. These included dietary consumption (milk type and coffee consumed), loneliness and isolation, hip circumference, and other metabolite measures. See Figure~\ref{chronoBeer}. Data underlying the confounder graph in Figures 6 and 7 is in the Appendix spreadsheet Table 4: Confounder Graph.
 
 \begin{figure}[htbp]
 \begin{subfigure}{.35\linewidth}
@@ -404,7 +401,7 @@ Our findings have revealed potential causal associations between chronotype and 
 
 %Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
 
-\dataavailability{Data are available via the EpiGraphDB and MRBase APIs.} 
+\dataavailability{Data are available via the EpiGraphDB and MRBase APIs. Data used to produce all figures (including supplementary figures) are available in Appendix spreadsheets.} 
 
 %\acknowledgments{In this section you can acknowledge any support given which is not covered by the author contribution or funding sections. This may include administrative and technical support, or donations in kind (e.g., materials used for experiments).}
 

@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 \usepackage{subfig}
 \usepackage{multirow}
-\usepackage{subcaption}
+\usepackage{subfigure}
 
 
 \title{{\bf Supplementary Material:} \\A causal web between chronotype and metabolic health traits}
@@ -25,107 +25,116 @@ Appendix 4: AppendixTable4ConfounderGraph.xlsx.
 Statistics downloaded from EpiGraphDB needed to reproduce figures 6 and 7.
 
 
-
-
-% omega 3 and total triglycerides
+% beer
+% diabetes
+% bipolar
+% omega3
 \begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=0.4\textwidth]{Figs/Analysis2/Chronotype_vs_Omega-3_fatty_acids.Plots.pdf}
-         %\caption{}
-         \label{omega3}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=0.4\textwidth]{Figs/Analysis2/Chronotype_vs_Serum_total_triglycerides.Plots.pdf}
-         %\caption{}
-         \label{totalTG}
-     \end{subfigure}
-        \caption{Propensity to an evening chronotype causes increased omega-3 fatty acids (A) and serum total triglycerides (B). IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{omega3tgs}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth]{Figs/Analysis2/Chronotype_vs_Omega-3_fatty_acids.Scatterplots.pdf}
+\label{omega3Scatter}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth,keepaspectratio]{Figs/Analysis2/Chronotype_vs_Omega-3_fatty_acids.LOOplots.pdf}
+\label{omega3Loo}
+\end{subfigure}
+\caption{Propensity to an evening chronotype causes increased omega-3 fatty acids. (top) IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Panel (bottom) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{omega3}
+\end{figure}
+% triglycerides
+\begin{figure}[htbp]
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth]{Figs/Analysis2/Chronotype_vs_Serum_total_triglycerides.Scatterplots.pdf}
+\label{sttScatter}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth,keepaspectratio]{Figs/Analysis2/Chronotype_vs_Serum_total_triglycerides.LOOplots.pdf}
+\label{sttLoo}
+\end{subfigure}
+\caption{Propensity to an evening chronotype causes increased serum total triglycerides. (top) IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Panel (bottom) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{stt}
+\end{figure}
+%ffa
+\begin{figure}[htbp]
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth]{Figs/Analysis2/Chronotype_vs_Total_fatty_acids.Scatterplots.pdf}
+\label{ffa3Scatter}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth,keepaspectratio]{Figs/Analysis2/Chronotype_vs_Total_fatty_acids.LOOplots.pdf}
+\label{ffaLoo}
+\end{subfigure}
+\caption{Propensity to an evening chronotype causes increased total fatty acids. (top) IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Panel (bottom) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{ffa}
+\end{figure}
+% nicorandil
+\begin{figure}[htbp]
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth]{Figs/Analysis2/Chronotype_vs_Treatment_medication_code_nicorandil.Scatterplots.pdf}
+\label{nicScatter}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth,keepaspectratio]{Figs/Analysis2/Chronotype_vs_Treatment_medication_code_nicorandil.LOOplots.pdf}
+\label{nicLoo}
+\end{subfigure}
+\caption{Propensity to an evening chronotype causes decreased likelihood of treatment with nicorandil. (top) IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Panel (bottom) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{nic}
+\end{figure}
+% lethargy
+\begin{figure}[htbp]
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Frequency_of_tiredness___lethargy_in_last_2_weeks.Scatterplots.pdf}
+\label{lethargyScatter}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth,keepaspectratio]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Frequency_of_tiredness___lethargy_in_last_2_weeks.LOOplots.pdf}
+\label{lethargyLoo}
+\end{subfigure}
+\caption{Propensity to an evening chronotype causes increases in self-reported lethargy in the last two weeks. (top) IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Panel (bottom) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{lethargy}
 \end{figure}
 
-% total ffa and nicorandil
+% test
+% lethargy
 \begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Total_fatty_acids.Plots.pdf}
-         \caption{}
-         \label{tffa}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Treatment_medication_code:_nicorandil.Plots.pdf}
-         \caption{}
-         \label{nicorandil}
-     \end{subfigure}
-        \caption{Chronotype causes increased total fatty acids (A) and and a decreased likelihood of treatment with nicorandil. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{nicorandil}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Testosterone_levels.Scatterplots.pdf}
+\label{testScatter}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth,keepaspectratio]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Testosterone_levels.LOOplots.pdf}
+\label{testLoo}
+\end{subfigure}
+\caption{Propensity to an evening chronotype causes increases in serum testosterone. (top) IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Panel (bottom) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{test}
 \end{figure}
-
-
-% total T2dm and alcohol
+% waking
 \begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Chronotype_vs_Type_2_diabetes.Plots.pdf}
-         \caption{}
-         \label{t2dm}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Average_weekly_beer_plus_cider_intake.Plots.pdf}
-         \caption{}
-         \label{beer}
-     \end{subfigure}
-        \caption{Chronotype causes increased odds of a type 2 diabetes mellitus diagnosis (A) and and an increased weekly beer/cider intake. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{t2dmalcohol}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Waking_too_early.Scatterplots.pdf}
+\label{wakeScatter}
+\end{subfigure}
+\begin{subfigure}{\linewidth}
+\centering
+	\includegraphics[width=.8\linewidth,keepaspectratio]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Waking_too_early.LOOplots.pdf}
+\label{wakeLoo}
+\end{subfigure}
+\caption{Propensity to an evening chronotype causes decrease in odds of waking early. (top) IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Panel (bottom) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{wake}
 \end{figure}
-
-% total bp and tired
-\begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Bipolar_disorder.Plots.pdf}
-         \caption{}
-         \label{t2dm}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Frequency_of_tiredness___lethargy_in_last_2_weeks.Plots.pdf}
-         \caption{}
-         \label{beer}
-     \end{subfigure}
-        \caption{An evening chronotype contributes to a bipolar disorder diagnosis (A) and self-reported lethargy. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{bplethargy}
-\end{figure}
-
-% total test and wakingearly
-\begin{figure}[htbp]
-     \centering
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Testosterone_levels.Plots.pdf}
-         \caption{}
-         \label{testosterone}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.4\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Waking_too_early.Plots.pdf}
-         \caption{}
-         \label{waking}
-     \end{subfigure}
-        \caption{An evening chronotype contributes to increased serum testosterone (A) and a decrease in odds of waking early. IVW, Weighted median, mode, weighted mode, and Egger regressions shown. Lower panels depict leave-one-out sensitivity analyses with the IVW method.}
-        \label{t2dmalcohol}
-\end{figure}
-
-
-
-
 
 
 
