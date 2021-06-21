@@ -63,6 +63,7 @@
 \usepackage{subcaption}
 %\usepackage{caption}
 \usepackage{rotating}
+\usepackage{xcolor}
 
 %=================================================================
 %% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
@@ -171,12 +172,6 @@ $^{6}$ NIHR Biomedical Research Centre, University Hospital Birmingham, Birmingh
 %%%%%%%%%
 %%%%%%%%%
 %%%%%%%%%
-%%% TODOs:
-
-%  reference in text (fix this); all tables!!!
-
-% Supplemental figs layout and reference in text
-
 
 
 
@@ -219,7 +214,7 @@ In a IVW meta-analysis, the  IVW estimate is calculated by:
 \widehat{\beta}_{Yj} = \theta_{IVW}\widehat{\beta}_{Xj} + \epsilon_{Ij};      \epsilon_{Ij} \sim N(0,\sigma^2se(\widehat{\beta}_{Yj})^2)
 \end{equation}
 
-where $\widehat{\theta}$ is the inverse variance weighted average, $se$ is the standard error, I is an error term (Figure~\ref{fig:MR_Workflow} third step, right), and other terms are as above.
+where $\widehat{\theta}$ is the inverse variance weighted average, $se$ is the standard error, \textcolor{blue}{$\epsilon$} is an error term (Figure~\ref{fig:MR_Workflow} third step, right), and other terms are as above.
 
 Ten significant IVW studies were then subject to four additional MR methods (Figure~\ref{fig:MR_Workflow}, third level left).  To address unseen horizontal pleiotropy, the Egger regression was performed. \cite{bowden_framework_2017,bowden_mendelian_2015}. The Wald ratios of each SNP are used in meta-regression by taking the inverse variance weights used in the IVW analysis without modeling the intercept. As a result, a causal estimate, similar to IVW, is obtained, adjusted though for horizontal pleiotropy which is necessary so as to ensure IVW validity \cite{bowden_mendelian_2015}.
 MR-Egger regression is an extension of IVW regression. Instead of assuming no intercept term, an intercept is estimated:
@@ -257,7 +252,7 @@ Initially, 120 prospective studies were identified using EpiGraphDB containing c
 \end{figure}
 
 \subsection{Chronotype influences on diabetes, alcohol consumption, and bipolar disorder}
-The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included 7 independent SNPs, see Supplemental Table~\ref{FDR_Signif_CHR_Exposure}. The weakest association was with the MR-Egger method, $\beta$ = 0.73, which while not highly significant (p = 0.04) did not reveal evidence of horizontal pleiotropy (intercept p-value = 0.98) or heterogeneity (Egger Q p-value 0.99). The IVW analysis and weighted median analysis each concurred (p = 0.002 and 0.009), suggesting little loss of associative signal even if some of the 7 SNPs were biased by pleiotropy (Figure~\ref{t2dmScatter}). Leave one out sensitivity analyses suggests that no one IV dominates the model, and all methods have similar effect sizes as judged by slope, Figure~\ref{t2dmLoo}. 
+The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included 7 independent SNPs, see \textcolor{blue}{Appendix Table 3}. The weakest association was with the MR-Egger method, $\beta$ = 0.73, which while not highly significant (p = 0.04) did not reveal evidence of horizontal pleiotropy (intercept p-value = 0.98) or heterogeneity (Egger Q p-value 0.99). The IVW analysis and weighted median analysis each concurred (p = 0.002 and 0.009), suggesting little loss of associative signal even if some of the 7 SNPs were biased by pleiotropy (Figure~\ref{t2dmScatter}). Leave one out sensitivity analyses suggests that no one IV dominates the model, and all methods have similar effect sizes as judged by slope, Figure~\ref{t2dmLoo}. 
 % T2DM
 \begin{figure}[htbp]
 \begin{subfigure}{.5\linewidth}
@@ -317,14 +312,14 @@ The influence of chronotype on bipolar disorder appears substantially varied, wi
 Results for other 7 individual analyses are given in the supplemental materials.
 
 \subsection{Confounder case studies: bi-polar disorder and alcohol intake}
-Each of the 10 exposure/outcome analyses were included in a confounder analysis, searching via existing MR associations for possible intermediate variables. Results in full are available in the Supplementary Table~\ref{ConfounderAnalysis}. In Figure~\ref{gBig}, a directed graph was created to visually inspect the relationships between types of confounders, outcomes, and potentially causal exposures. Exposures are represented in green, reflecting the two independent GWAS analyses used to access chronotype. Outcomes are reflected in red, and potential intermediate or confounding traits as white notes. As may be evident, there are many potential confounders (111), followed in number by intermediates (52), colliders (35), and reverse intermediates (18) all with p < 1e-5 in the EpiGraphDB database. The graph shows two clusters sharing potential confounding traits (time to first cigarette and lung cancer). Both are confounders between chronotype and two outcomes: cigarettes confound omega-3 fatty acid concentration and waking too early; lung cancer also confounds omega-3 fatty acid wile also impacting average weekly beer/cider intake.
+Each of the 10 exposure/outcome analyses were included in a confounder analysis, searching via existing MR associations for possible intermediate variables. Results in full are available in the \textcolor{blue}{Appendix Table 4}.. In Figure~\ref{gBig}, a directed graph was created to visually inspect the relationships between types of confounders, outcomes, and potentially causal exposures. Exposures are represented in green, reflecting the two independent GWAS analyses used to access chronotype. Outcomes are reflected in red, and potential intermediate or confounding traits as white notes. As may be evident, there are many potential confounders (111), followed in number by intermediates (52), colliders (35), and reverse intermediates (18) all with p < 1e-5 in the EpiGraphDB database. The graph shows two clusters sharing potential confounding traits (time to first cigarette and lung cancer). Both are confounders between chronotype and two outcomes: cigarettes confound omega-3 fatty acid concentration and waking too early; lung cancer also confounds omega-3 fatty acid wile also impacting average weekly beer/cider intake.
 
 \begin{sidewaysfigure}[htbp]
 
 %\begin{subfigure}{\linewidth}
 \centering
 	\includegraphics[width=\linewidth,keepaspectratio]{Figs/Analysis3/gBig.png}
-\caption{Causal and confounding relationships between chronotype exposures (green nodes) and traits (red nodes). White nodes and potential confounding variables. Edges indicate the direction of causality (arrows). Green edges = causal relationships; Lavender = colliders, orange = confounders, yellow = intermediates, blue = reverse intermediates.}
+\caption{Causal and confounding relationships between chronotype exposures (green nodes) and traits (red nodes). White nodes \textcolor{blue}{are}  potential confounding variables. Edges indicate the direction of causality (arrows). Green edges = causal relationships; \textcolor{blue}{purple} = colliders, orange = confounders, \textcolor{blue}{brown} = intermediates, blue = reverse intermediates.}
 \label{gBig}
 %\end{subfigure}\\[1ex]
 \end{sidewaysfigure}
@@ -333,7 +328,7 @@ Each of the 10 exposure/outcome analyses were included in a confounder analysis,
 
 Not all MR analyses are beset by confounders, however. The relationship between exposure to an evening chronotype and bipolar disorder was not found to be influenced by a statistically significant confounder or collider. In addition to the direct relationship between chronotype and bipolar disorder, a mediator of the odds of ER+ breast cancer was discovered, see Figure~\ref{chronoBipolar}. The relationship from chronotype to cancer ($\beta$ 0.32) was stronger than the unmediated relationship directly to bipolar ($\beta$ 0.17), but weaker than the possible relationship of breast cancer to bipolar disorder ($\beta$ 0.42). 
 
-As a last example study, the relationship between exposure to an evening chronotype and an increase of beer/wine intake was explored. There is a possible bi-directional relationship between chronotype and beer/alcohol intake, mediated by reverse-intermediates of a lack of physical activity (types of physical activity in the last 4 weeks: none of the above) and concentration of the UBE2G2 protein. Additionally, direct intermediates include the lifetime number of sexual partners. No colliders were present, but several potential confounders were identified which may need to be conditioned on, depending on study design. These included dietary consumption (milk type and coffee consumed), loneliness and isolation, hip circumference, and other metabolite measures. See Figure~\ref{chronoBeer}. Data underlying the confounder graph in Figures 6 and 7 is in the Appendix spreadsheet Table 4: Confounder Graph.
+As a last example study, the relationship between exposure to an evening chronotype and an increase of beer/wine intake was explored. There is a possible bi-directional relationship between chronotype and beer/alcohol intake, mediated by reverse-intermediates of a lack of physical activity (types of physical activity in the last 4 weeks: none of the above) and concentration of the UBE2G2 protein. Additionally, direct intermediates include the lifetime number of sexual partners. No colliders were present, but several potential confounders were identified which may need to be conditioned on, depending on study design. These included dietary consumption (milk type and coffee consumed), loneliness and isolation, hip circumference, and other metabolite measures. See Figure~\ref{chronoBeer}. Data underlying the confounder graph in Figures 6 and 7 is in the Appendix\textcolor{blue}{Appendix Table 4}.
 
 \begin{figure}[htbp]
 \begin{subfigure}{.35\linewidth}
@@ -348,7 +343,7 @@ As a last example study, the relationship between exposure to an evening chronot
 \caption{}
 \label{chronoBeer}
 \end{subfigure}
-\caption{(a) An evening chronotype associates with bipolar disorder. In addition to a valid association between chronotype and bipolar disorder, an intermediate association (p < 1e-5) was found for ER+ breast cancer. (b) An evening chronotype associates with increased beer and cider consumption. There is a potential bi-directional relationship between increased alcohol intake and an evening chronotype both directly (blue lines) and mediated by lack of physical activity and elevated UBE2G2. Chronotype may influence the number of sexual partners, which may influence average alcohol intake (yellow). There are numerous potential confounders relating body composition, loneliness, and diet.}
+\caption{(a) An evening chronotype associates with bipolar disorder. In addition to a valid association between chronotype and bipolar disorder, an intermediate association (p < 1e-5) was found for ER+ breast cancer. (b) An evening chronotype associates with increased beer and cider consumption. There is a potential bi-directional relationship between increased alcohol intake and an evening chronotype both directly (blue lines) and mediated by lack of physical activity and elevated UBE2G2. Chronotype may influence the number of sexual partners, which may influence average alcohol intake (\textcolor{blue}{brown}). There are numerous potential confounders relating body composition, loneliness, and diet.}
 \label{chronoBeerBipolar}
 \end{figure}
 
@@ -401,7 +396,7 @@ Our findings have revealed potential causal associations between chronotype and 
 
 %Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
 
-\dataavailability{Data are available via the EpiGraphDB and MRBase APIs. Data used to produce all figures (including supplementary figures) are available in Appendix spreadsheets.} 
+\dataavailability{Data are available via the EpiGraphDB and MRBase APIs. Data used to produce all figures (including supplementary figures) are available in Appendix \textcolor{blue}{Tables 1 - 4}.}
 
 %\acknowledgments{In this section you can acknowledge any support given which is not covered by the author contribution or funding sections. This may include administrative and technical support, or donations in kind (e.g., materials used for experiments).}
 
