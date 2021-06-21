@@ -244,12 +244,15 @@ All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_
 Initially, 120 prospective studies were identified using EpiGraphDB containing chronotype as an exposure,. Of these, there were 28 primary associations, with IVW p-values of < 5e-8, directly relevant to this study, including measures of alcohol intake, bipolar disorder, T2DM (type 2 diabetes mellitus) as well as testosterone and triglyceride levels. See Appendix Table 1. Since the analyses were performed in a high-throughput environment, we re-analyzed each relevant study with the IVW method using summary statistics( Figure~\ref{forestIVW}). Following filtering and quality control, 10 studies held up to a false discovery rate of p < 0.05. The bi-directional nature of the forest plot exists due the different nature of the chronotype exposure studies (treating morning or evening chronotype as case/control). Each of the 10 studies were further analysed with a tendency toward eveningness reflecting a high $\beta$ value in the exposure effect size. 
 
 %% figure: re-analysis forest plots of significant traits
-\begin{figure}[htbp]
+\begin{sidewaysfigure}[htbp]
 	\centering
-	\includegraphics[width=\linewidth]{Figs/Analysis1/forestIVW1a.pdf}
+	\includegraphics[width=\linewidth]{Figs/Analysis1/new_forestIVW1a.pdf}
 	\caption{Causal relationships between exposure to chronotype and various traits. Causal associations mined from EpiGraphDB (IVW p < 5e-8) were analyzed using two chronotype exposure measures. Outcomes are listed with trait and study accession number. Exposure \textit{ebi-a-GCST003837} reflects SD increase in chronotype on a continuous morning - evening scale. Exposure \textit{ukb-a-11} represents odds of an evening chronotype. Effect sizes are from fixed-effects inverse variance weighted analyses with 95\% confidence intervals. False discovery rate-corrected p-values are shown.}
 	\label{forestIVW}
-\end{figure}
+\end{sidewaysfigure}
+
+
+
 
 \subsection{Chronotype influences on diabetes, alcohol consumption, and bipolar disorder}
 The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included 7 independent SNPs, see \textcolor{blue}{Appendix Table 3}. The weakest association was with the MR-Egger method, $\beta$ = 0.73, which while not highly significant (p = 0.04) did not reveal evidence of horizontal pleiotropy (intercept p-value = 0.98) or heterogeneity (Egger Q p-value 0.99). The IVW analysis and weighted median analysis each concurred (p = 0.002 and 0.009), suggesting little loss of associative signal even if some of the 7 SNPs were biased by pleiotropy (Figure~\ref{t2dmScatter}). Leave one out sensitivity analyses suggests that no one IV dominates the model, and all methods have similar effect sizes as judged by slope, Figure~\ref{t2dmLoo}. 
