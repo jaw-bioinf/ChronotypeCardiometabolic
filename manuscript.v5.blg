@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.v5.aux
+The style file: Definitions/mdpi.bst
+I found no \bibdata command---while reading file manuscript.v5.aux
+Warning--I didn't find a database entry for "lind_molecular_2020"
+Warning--I didn't find a database entry for "adams_evaluating_2019"
+Warning--I didn't find a database entry for "richmond_investigating_2019"
+Warning--I didn't find a database entry for "gibson_evidence_2019"
+Warning--I didn't find a database entry for "treur_investigating_2018"
+Warning--I didn't find a database entry for "lane_genome-wide_2016"
+Warning--I didn't find a database entry for "buniello_nhgri-ebi_2019"
+Warning--I didn't find a database entry for "hemani_mr-base_2018"
+Warning--I didn't find a database entry for "liu_epigraphdb_2020"
+Warning--I didn't find a database entry for "chang_second-generation_2015"
+Warning--I didn't find a database entry for "huang_improved_2015"
+Warning--I didn't find a database entry for "rasooly_conducting_2019"
+Warning--I didn't find a database entry for "benyamin_family-based_2009"
+Warning--I didn't find a database entry for "burgess_interpreting_2017"
+Warning--I didn't find a database entry for "bowden_framework_2017"
+Warning--I didn't find a database entry for "bowden_mendelian_2015"
+Warning--I didn't find a database entry for "bowden_consistent_2016"
+Warning--I didn't find a database entry for "hartwig_robust_2017"
+Warning--I didn't find a database entry for "higgins_cochrane_2011"
+Warning--I didn't find a database entry for "burgess_review_2017"
+Warning--I didn't find a database entry for "hemani_orienting_2017"
+Warning--I didn't find a database entry for "shannon_cytoscape_2003"
+Warning--I didn't find a database entry for "r_core_team_r:_2013"
+Warning--I didn't find a database entry for "albrecht_timing_2012"
+Warning--I didn't find a database entry for "li_circadian_2020"
+Warning--I didn't find a database entry for "socaciu_melatonin_2020"
+Warning--I didn't find a database entry for "pan_circadian_2020"
+Warning--I didn't find a database entry for "jones_genome-wide_2019"
+Warning--I didn't find a database entry for "gantenbein_nicorandil_1998"
+Warning--I didn't find a database entry for "kusama_variant_2011"
+Warning--I didn't find a database entry for "hisler_is_2021"
+Warning--I didn't find a database entry for "ferrer_clock_2020"
+Warning--I didn't find a database entry for "romo-nava_evening_2020"
+Warning--I didn't find a database entry for "rohrer_thinking_2018"
+Warning--I didn't find a database entry for "allen_uk_2014"
+Warning--I didn't find a database entry for "labrecque_understanding_2018"
+Warning--I didn't find a database entry for "Aziz_2020"
+You've used 0 entries,
+            2862 wiz_defined-function locations,
+            595 strings with 4672 characters,
+and the built_in function-call counts, 18 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 0
+:= -- 12
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 0
+format.name$ -- 0
+if$ -- 0
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 0
+purify$ -- 0
+quote$ -- 0
+skip$ -- 0
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)
