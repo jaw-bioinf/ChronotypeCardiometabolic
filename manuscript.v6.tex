@@ -88,8 +88,7 @@
 \newcommand{\orcidauthorH}{0000-0002-2061-091X}
 
 
-\Author{\hl{John A. Williams} %Please carefully check the accuracy of names and affiliations.
- $^{1,2,}$*\orcidA{},   Dominic Russ $^{1,2}$\orcidD{}, Laura Bravo-Merodio $^{1,2}$\orcidC{}, \hl{Victor Roth Cardoso} $^{1,2}$\orcidB{}, \newline~\hl{Samantha C. Pendleton} $^{1,2}$\orcidE{}, Furqan Aziz $^{1,2}$\orcidF{},  Animesh Acharjee $^{1,2,3}$\orcidG{} and Georgios V. Gkoutos $^{1,2,3,4,5,6}$\orcidH{}}
+\Author{{John A. Williams} $^{1,2,}$*\orcidA{},   Dominic Russ $^{1,2}$\orcidD{}, Laura Bravo-Merodio $^{1,2}$\orcidC{}, {Victor Roth Cardoso} $^{1,2}$\orcidB{}, \newline~{Samantha C. Pendleton} $^{1,2}$\orcidE{}, Furqan Aziz $^{1,2}$\orcidF{},  Animesh Acharjee $^{1,2,3}$\orcidG{} and Georgios V. Gkoutos $^{1,2,3,4,5,6}$\orcidH{}}
 
 \AuthorNames{John A. Williams,  Dominic Russ, Laura Bravo-Merodio, Victor Roth Cardoso, Samantha C. Pendleton, Furqan Aziz,  Animesh Acharjee and Georgios V. Gkoutos}
 
@@ -100,7 +99,7 @@
 $^{1}$\quad Institute of Cancer and Genomic Sciences, Centre for Computational Biology, University of Birmingham, Birmingham B15 2TT, UK; drr719@student.bham.ac.uk (D.R.); lxb732@student.bham.ac.uk (L.B.-M.); V.RothCardoso@bham.ac.uk (V.R.C.); scp887@student.bham.ac.uk (S.C.P.); f.aziz@bham.ac.uk (F.A.); a.acharjee@bham.ac.uk (A.A.); g.gkoutos@bham.ac.uk (G.V.G.)\\
 $^{2}$\quad Institute of Translational Medicine, University of Birmingham, Birmingham B15 2TT, UK\\
 $^{3}$\quad NIHR Surgical Reconstruction and Microbiology Research Centre, University Hospital Birmingham, Birmingham B15 2WB, UK\\
-$^{4}$\quad \hl{MRC Health Data Research UK (HDR UK)}\\%pls add city, post code and country
+$^{4}$\quad {MRC Health Data Research UK (HDR), Midlands Site, Birmingham, B15 2TT, UK}\\
 $^{5}$\quad NIHR Experimental Cancer Medicine Centre, Birmingham B15 2TT, UK\\
 $^{6}$\quad NIHR Biomedical Research Centre, University Hospital Birmingham, Birmingham B15 2WB, UK}
 
@@ -303,7 +302,7 @@ As a last example study, the relationship between exposure to an evening chronot
 % group analyses (analysis A)
 This analysis characterised the influence of an evening chronotype on cardiometabolic and behavioral traits. Chronotype, a measure of circadian rhythm, is a largely endogenous process though there are sustaining queues, zeitgebers, which influence chronotype \cite{albrecht_timing_2012}. The translational importance of understanding circadian biology is not limited to neurobehavioral function; the interplay between metabolism and circadian biology has been highlighted heavily in recent years. The gut microbiome, adipose cytokines, and metabolic hormones from ghrelin to leptin are all strongly regulated by circadian biology \cite{li_circadian_2020,socaciu_melatonin_2020,pan_circadian_2020}. Recent Mendelian randomization studies have also suggested a strong causal link between chronotype (a gross circadian phenotype) and body composition, free fatty acid circulation, and adiposity \cite{adams_evaluating_2019,jones_genome-wide_2019}. The current analysis revealed strong associations between chronotype and 10 other biological traits. In Figure~\ref{forestIVW}, we reproduced causal associations between diabetes and triglycerides. Additionally, we report novel associations  between chronotype and metabolomic data (omega-3 fatty acids, total fatty acids, bilirubin). The strongest signals include diabetes and bipolar disorder, highlighting chronotype as a link between metabolic and psychiatric health. While not all IVW MR studies passed multiple testing correction, those that did had complex relationships with other traits, various degrees of heterogeneity and potential interplay in horizontal pleiotropy.
 % individual analyses (analysis B)
-All serum triglyceride associations and a link to type 2 diabetes had the same relationship to chronotype: increased risk or concentration of the trait on an exposure to a genetic predisposition to eveningness. Interestingly, there was a significant (albeit small) association between eveningness and a decrease in likelihood to be taking nicorandil, a ventilator used to treat angina (see \hl{Figure}~\ref{nicorandil}. %no this figure, pls revise
+All serum triglyceride associations and a link to type 2 diabetes had the same relationship to chronotype: increased risk or concentration of the trait on an exposure to a genetic predisposition to eveningness. Interestingly, there was a significant (albeit small) association between eveningness and a decrease in likelihood to be taking nicorandil, a ventilator used to treat angina (see {Figure~S4}). 
 Nicorandil has been shown in one study to affect the diurnal rhythms in body temperature and heart rate in rats \cite{gantenbein_nicorandil_1998}. There is no evidence that the drug affects circadian behavior in humans, although variant angina (treated with nicorandil) has a circadian component, supporting the idea that the influence of circadian biology may contribute to some types of angina that are amenable to nicorandil treatment \cite{kusama_variant_2011}. The influence of chronotype on alcohol consumption was recently investigated by Hisler and colleagues, who revealed a 24 hour rhythm of alcohol craving in late adolescent adults and showed that an evening chronotype corresponds to a later craving for alcohol \cite{hisler_is_2021}. The associations between an evening chronotype and bipolar disorder are well documented \cite{ferrer_clock_2020}, and has been proposed as an endophenotype to classify subtypes of bipolar \cite{romo-nava_evening_2020}, though several interacting traits may play a role in these subtypes.
 % confounder analyses (analysis C)
 Not surprisingly, there were over 200 potential confounders or mediators observed between chronotype and the ten significant exposures studied. As evidenced by Figure~\ref{gBig}, they vary in type from acceptable in an MR analysis (intermediate, possibly reverse intermediate depending on follow-up studies) to those that must be conditioned upon to maintain causality (the most abundant intermediate, confounders) to the more problematic colliders. Colliders are so called because the causal arrows in a directed acyclic graph from exposure and outcome both impact (collide on) the variable. Unlike confounders, conditioning on colliders in regression introduces bias into the association between exposure and outcome \cite{rohrer_thinking_2018}. The four associations subject to collider bias are the relationship between chronotype and omega-3 fatty acids, serum total triglycerides, total fatty acids, and lethargy. Possible confounders for the three metabolites include other cardiometabolic parameters, including total fatty acids, fasting insulin, and VLDL concentrations. The release of metabolomic data in the UK Biobank \cite{allen_uk_2014} caters for new opportunities to investigate these collisions experimentally since they relate to chronotype and both psychiatric and cardiometabolic diseases. The only collider associated to lethargy was narcolepsy, an intuitive yet potentially complex relationship. The only confounder between an evening chronotype found in this study was ER+ breast cancer. The confounding was as an intermediate, which maintains the causal nature of the analysis while adding an extra explanatory ``path'' to get from exposure to outcome. While there is no current literature directly linking chronotype to breast cancer and then to the presence of bipolar disorder, this may be investigated in current murine models of breast cancer via knockdown experiments or by manipulating light as an external zeitgeber.
@@ -338,10 +337,10 @@ Our findings have revealed potential causal associations between chronotype and 
 
 \funding{The authors acknowledge support from the NIHR Birmingham ECMC, NIHR Birmingham SRMRC, Nanocommons H2020-EU (731032) and the NIHR Birmingham Biomedical Research Centre and the MRC Heath Data Research UK (HDRUK/CFC/01), an initiative funded by UK Research and Innovation, Department of Health and Social Care (England) and the devolved administrations, and leading medical research charities. The views expressed in this publication are those of the authors and not necessarily those of the NHS, the National Institute for Health Research, the Medical Research Council or the Department of Health.}
 
-\institutionalreview{\hl{~}}
+\institutionalreview{Not applicable}
 %In this section, please add the Institutional Review Board Statement and approval number for studies involving humans or animals. Please note that the Editorial Office might ask you for further information. Please add ``The study was conducted according to the guidelines of the Declaration of Helsinki, and approved by the Institutional Review Board (or Ethics Committee) of NAME OF INSTITUTE (protocol code XXX and date of approval).'' OR ``Ethical review and approval were waived for this study, due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans or animals. You might also choose to exclude this statement if the study did not involve humans or animals.}
 
-\informedconsent{\hl{~}}
+\informedconsent{Not applicable}
 %Any research article describing a study involving humans should contain this statement. Please add ``Informed consent was obtained from all subjects involved in the study.'' OR ``Patient consent was waived due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans. You might also choose to exclude this statement if the study did not involve humans.
 
 %Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
@@ -593,8 +592,8 @@ Hartwig, F.P.; Davey~Smith, G.; Bowden, J.
 \bibitem[Higgins and Green(2011)]{higgins_cochrane_2011}
 Higgins, J.; Green, S. (Eds.)
 \newblock {\em Cochrane {Handbook} for {Systematic} {Reviews} of
-  {Interventions}}, \hl{5.1.0 [updated march 2011] ed.}; \hl{The Coochrane
-  Collaboration:}  2011.%pls confirm if ``5.1.0 [updated march 2011] ed.'' is correct and add location of publisher
+  {Interventions}}, {5.1.0 [updated march 2011] ed.}; {The Coochrane
+  Collaboration:}  2011. Available from www.training.cochrane.org/handbook. 
 
 \bibitem[Burgess \em{et~al.}(2017)Burgess, Small, and
   Thompson]{burgess_review_2017}
@@ -626,8 +625,8 @@ Shannon, P.; Markiel, A.; Ozier, O.; Baliga, N.S.; Wang, J.T.; Ramage, D.;
   doi:{\changeurlcolor{black}\href{https://doi.org/10.1101/gr.1239303}{\detokenize{10.1101/gr.1239303}}}.
 
 \bibitem[{R Core Team}(2013)]{r_core_team_r:_2013}
-{R Core Team}.
-\newblock \emph{R: {A} Language and Environment for Statistical Computing}; \hl{R Core Team:} 2013.
+{R Core Team (2013)}.
+\newblock \emph{R: {A} Language and Environment for Statistical Computing}; R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
 
 \bibitem[Albrecht(2012)]{albrecht_timing_2012}
 Albrecht, U.
