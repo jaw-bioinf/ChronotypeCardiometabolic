@@ -179,8 +179,7 @@ All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Results}
-Initially, 120 prospective studies were identified using EpiGraphDB containing chronotype as an exposure,. Of these, there were 28 primary associations, with IVW $p$-values of <5e-8, directly relevant to this study, including measures of alcohol intake, bipolar disorder, T2DM (type 2 diabetes mellitus) as well as testosterone and triglyceride levels. See \hl{Appendix Table A1}. %no Appendix in this manuscript, pls revise.
-Since the analyses were performed in a high-throughput environment, we re-analyzed each relevant study with the IVW method using summary statistics (\mbox{Figure~\ref{forestIVW}}). Following filtering and quality control, 10 studies held up to a false discovery rate of \mbox{$p$ < 0.05}. The bi-directional nature of the forest plot exists due the different nature of the chronotype exposure studies (treating morning or evening chronotype as case/control). Each of the 10 studies were further analyzed with a tendency toward eveningness reflecting a high $\beta$ value in the exposure effect size. 
+Initially, 120 prospective studies were identified using EpiGraphDB containing chronotype as an exposure,. Of these, there were 28 primary associations, with IVW $p$-values of <5e-8, directly relevant to this study, including measures of alcohol intake, bipolar disorder, T2DM (type 2 diabetes mellitus) as well as testosterone and triglyceride levels. See {Table S1}. Since the analyses were performed in a high-throughput environment, we re-analyzed each relevant study with the IVW method using summary statistics (\mbox{Figure~\ref{forestIVW}}). Following filtering and quality control, 10 studies held up to a false discovery rate of \mbox{$p$ < 0.05}. The bi-directional nature of the forest plot exists due the different nature of the chronotype exposure studies (treating morning or evening chronotype as case/control). Each of the 10 studies were further analyzed with a tendency toward eveningness reflecting a high $\beta$ value in the exposure effect size. 
 %% figure: re-analysis forest plots of significant traits
 \begin{figure}[H]
 	%\centering
@@ -190,7 +189,7 @@ Since the analyses were performed in a high-throughput environment, we re-analyz
 \end{figure}
 
 \subsection{Chronotype Influences on Diabetes, Alcohol Consumption, and Bipolar Disorder}
-The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included seven independent SNPs, see {\hl{Appendix Table A3}}. The weakest association was with the MR-Egger method, $\beta$ = 0.73, which while not highly significant ($p$ = 0.04) did not reveal evidence of horizontal pleiotropy (intercept $p$-value = 0.98) or heterogeneity (Egger Q $p$-value 0.99). The IVW analysis and weighted median analysis each concurred ($p$ = 0.002 and 0.009), suggesting little loss of associative signal even if some of the seven SNPs were biased by pleiotropy (Figure~\ref{t2dm}a). Leave-one-out sensitivity analyses suggests that no one IV dominates the model, and all methods have similar effect sizes as judged by slope, as shown in Figure~\ref{t2dm}b. 
+The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included seven independent SNPs, see {{Table S3}}. The weakest association was with the MR-Egger method, $\beta$ = 0.73, which while not highly significant ($p$ = 0.04) did not reveal evidence of horizontal pleiotropy (intercept $p$-value = 0.98) or heterogeneity (Egger Q $p$-value 0.99). The IVW analysis and weighted median analysis each concurred ($p$ = 0.002 and 0.009), suggesting little loss of associative signal even if some of the seven SNPs were biased by pleiotropy (Figure~\ref{t2dm}a). Leave-one-out sensitivity analyses suggests that no one IV dominates the model, and all methods have similar effect sizes as judged by slope, as shown in Figure~\ref{t2dm}b. 
 
 Chronotype has a weaker but more statistically significant association with the amount of alcoholic beer or cider drinks consumed weekly, with the increase reflected in pints per week consumed (mean among all respondents of 3/week). With an MR-Egger intercept $p$-value of 0.31 and a significant Egger regression coefficient ($p$-value = 0.04), the initial analysis provides strong evidence that the trait may not be subject to horizontal pleiotropy. The weighted median and IVW method were again strongest ($\beta$ = 0.089 and 0.79, \mbox{$p$ = 4.4e-6} and 9.7e-4), as shown in Figure~\ref{beer}a. There was, however, evidence among the 82 SNPs which passed the threshold for strong heterogeneity (Cochran Q = 333), suggesting pleiotropy or moderating factors for further investigation even in the absence of such suggestions from the MR-Egger intercept significance test. Heterogeneity among SNPs can be observed in Figure~\ref{beer}b, while the leave-one-out analysis shows overlapping confidence intervals in each iteration, suggesting homogeneity on the whole.
 
@@ -251,7 +250,7 @@ The influence of chronotype on bipolar disorder appears substantially varied, wi
 Results for other seven individual analyses are given in the supplemental materials.
 
 \subsection{Confounder Case Studies: Bi-Polar Disorder and Alcohol Intake}
-Each of the 10 exposure/outcome analyses were included in a confounder analysis, searching via existing MR associations for possible intermediate variables. Results in full are available in the {\hl{Appendix Table A4}}. In Figure~\ref{gBig}, a directed graph was created to visually inspect the relationships between types of confounders, outcomes, and potentially causal exposures. Exposures are represented in green, reflecting the two independent GWAS analyses used to access chronotype. Outcomes are reflected in red, and potential intermediate or confounding traits as white notes. As may be evident, there are many potential confounders (111), followed in number by intermediates (52), colliders (35), and reverse intermediates (18) all with $p$ < 1e-5 in the EpiGraphDB database. The graph shows two clusters sharing potential confounding traits (time to first cigarette and lung cancer). Both are confounders between chronotype and two outcomes: cigarettes confound omega-3 fatty acid concentration and waking too early; lung cancer also confounds omega-3 fatty acid wile also impacting average weekly beer/cider intake.
+Each of the 10 exposure/outcome analyses were included in a confounder analysis, searching via existing MR associations for possible intermediate variables. Results in full are available in the {{Table S4}}. In Figure~\ref{gBig}, a directed graph was created to visually inspect the relationships between types of confounders, outcomes, and potentially causal exposures. Exposures are represented in green, reflecting the two independent GWAS analyses used to access chronotype. Outcomes are reflected in red, and potential intermediate or confounding traits as white notes. As may be evident, there are many potential confounders (111), followed in number by intermediates (52), colliders (35), and reverse intermediates (18) all with $p$ < 1e-5 in the EpiGraphDB database. The graph shows two clusters sharing potential confounding traits (time to first cigarette and lung cancer). Both are confounders between chronotype and two outcomes: cigarettes confound omega-3 fatty acid concentration and waking too early; lung cancer also confounds omega-3 fatty acid wile also impacting average weekly beer/cider intake.
 
 Not all MR analyses are beset by confounders, however. The relationship between exposure to an evening chronotype and bipolar disorder was not found to be influenced by a statistically significant confounder or collider. In addition to the direct relationship between chronotype and bipolar disorder, a mediator of the odds of ER+ breast cancer was discovered, see Figure~\ref{chronoBeerBipolar}a. The relationship from chronotype to cancer ($\beta$ 0.32) was stronger than the unmediated relationship directly to bipolar ($\beta$ 0.17), but weaker than the possible relationship of breast cancer to bipolar disorder ($\beta$ 0.42). 
 % start a new page without indent 4.6cm
@@ -325,7 +324,19 @@ Our findings have revealed potential causal associations between chronotype and 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% optional
-%\supplementary{The following are available online at \linksupplementary{s1}, Figure S1: title, Table S1: title, Video S1: title.}
+\supplementary{The following are available online at \linksupplementary{s1}, Table S1: TableS1EpigraphDBIVWresults.xlsx. EpiGraphDB data downloaded to produce Figure 2.
+
+Table S2: TableS2StudyCharacteristics.xlsx.
+SNP-level information on all 10 studies analyzed needed to reproduce analyses of these 10 studies.
+
+Table S3: TableS3MRAnalysisResults.xlsx. Summary level results for each of the 10 MR analyses. 
+
+Table S4: TableS4ConfounderGraph.xlsx.
+Statistics downloaded from EpiGraphDB needed to reproduce figures 6 and 7.
+
+Figure S8: FigureS8.pdf: A2 size PDF of Figure 6 for on-screen viewing.
+
+Figures S1-S7: FiguresS1-S7.pdf: Remaining MR Results Figures.}
 
 % Only for the journal Methods and Protocols:
 % If you wish to submit a video article, please do so with any other supplementary material.
@@ -345,7 +356,7 @@ Our findings have revealed potential causal associations between chronotype and 
 
 %Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
 
-\dataavailability{Data are available via the EpiGraphDB and MRBase APIs. Data used to produce all figures (including supplementary figures) are available in \hl{Appendix Tables A1--A4}.}
+\dataavailability{Data are available via the EpiGraphDB and MRBase APIs. Data used to produce all figures (including supplementary figures) are available in { Tables S1--S4}.}
 
 %\acknowledgments{In this section you can acknowledge any support given which is not covered by the author contribution or funding sections. This may include administrative and technical support, or donations in kind (e.g., materials used for experiments).}
 
