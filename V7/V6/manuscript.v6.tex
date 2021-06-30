@@ -1,0 +1,838 @@
+%  LaTeX support: latex@mdpi.com 
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
+
+%=================================================================
+\documentclass[genes,article,accept,moreauthors,pdftex]{Definitions/mdpi} 
+
+% For posting an early version of this manuscript as a preprint, you may use ``preprints'' as the journal and change ``submit'' to ``accept''. The document class line would be, e.g., \documentclass[preprints,article,accept,moreauthors,pdftex]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
+
+%--------------------
+% Class Options:
+%--------------------
+%----------
+% journal
+%----------
+% Choose between the following MDPI journals:
+% acoustics, actuators, addictions, admsci, adolescents, aerospace, agriculture, agriengineering, agronomy, ai, algorithms, allergies, analytica, animals, antibiotics, antibodies, antioxidants, appliedchem, applmech, applmicrobiol, applnano, applsci, arts, asi, atmosphere, atoms, audiolres, automation, axioms, batteries, bdcc, behavsci, beverages, biochem, bioengineering, biologics, biology, biomechanics, biomedicines, biomedinformatics, biomimetics, biomolecules, biophysica, biosensors, biotech, birds, bloods, brainsci, buildings, businesses, cancers, carbon, cardiogenetics, catalysts, cells, ceramics, challenges, chemengineering, chemistry, chemosensors, chemproc, children, civileng, cleantechnol, climate, clinpract, clockssleep, cmd, coatings, colloids, compounds, computation, computers, condensedmatter, conservation, constrmater, cosmetics, crops, cryptography, crystals, curroncol, cyber, dairy, data, dentistry, dermato, dermatopathology, designs, diabetology, diagnostics, digital, disabilities, diseases, diversity, dna, drones, dynamics, earth, ebj, ecologies, econometrics, economies, education, ejihpe, electricity, electrochem, electronicmat, electronics, encyclopedia, endocrines, energies, eng, engproc, entropy, environments, environsciproc, epidemiologia, epigenomes, fermentation, fibers, fire, fishes, fluids, foods, forecasting, forensicsci, forests, fractalfract, fuels, futureinternet, futuretransp, futurepharmacol, futurephys, galaxies, games, gases, gastroent, gastrointestdisord, gels, genealogy, genes, geographies, geohazards, geomatics, geosciences, geotechnics, geriatrics, hazardousmatters, healthcare, hearts, hemato, heritage, highthroughput, histories, horticulturae, humanities, hydrogen, hydrology, hygiene, idr, ijerph, ijfs, ijgi, ijms, ijns, ijtm, ijtpp, immuno, informatics, information, infrastructures, inorganics, insects, instruments, inventions, iot, j, jcdd, jcm, jcp, jcs, jdb, jfb, jfmk, jimaging, jintelligence, jlpea, jmmp, jmp, jmse, jne, jnt, jof, joitmc, jor, journalmedia, jox, jpm, jrfm, jsan, jtaer, jzbg, kidney, land, languages, laws, life, liquids, literature, livers, logistics, lubricants, machines, macromol, magnetism, magnetochemistry, make, marinedrugs, materials, materproc, mathematics, mca, measurements, medicina, medicines, medsci, membranes, metabolites, metals, metrology, micro, microarrays, microbiolres, micromachines, microorganisms, minerals, mining, modelling, molbank, molecules, mps, mti, nanoenergyadv, nanomanufacturing, nanomaterials, ncrna, network, neuroglia, neurolint, neurosci, nitrogen, notspecified, nri, nursrep, nutrients, obesities, oceans, ohbm, onco, oncopathology, optics, oral, organics, osteology, oxygen, parasites, parasitologia, particles, pathogens, pathophysiology, pediatrrep, pharmaceuticals, pharmaceutics, pharmacy, philosophies, photochem, photonics, physchem, physics, physiolsci, plants, plasma, pollutants, polymers, polysaccharides, proceedings, processes, prosthesis, proteomes, psych, psychiatryint, publications, quantumrep, quaternary, qubs, radiation, reactions, recycling, regeneration, religions, remotesensing, reports, reprodmed, resources, risks, robotics, safety, sci, scipharm, sensors, separations, sexes, signals, sinusitis, smartcities, sna, societies, socsci, soilsystems, solids, sports, standards, stats, stresses, surfaces, surgeries, suschem, sustainability, symmetry, systems, taxonomy, technologies, telecom, textiles, thermo, tourismhosp, toxics, toxins, transplantology, traumas, tropicalmed, universe, urbansci, uro, vaccines, vehicles, vetsci, vibration, viruses, vision, water, wevj, women, world 
+
+%---------
+% article
+%---------
+% The default type of manuscript is ``article'', but can be replaced by: 
+% abstract, addendum, article, book, bookreview, briefreport, casereport, comment, commentary, communication, conferenceproceedings, correction, conferencereport, entry, expressionofconcern, extendedabstract, datadescriptor, editorial, essay, erratum, hypothesis, interestingimage, obituary, opinion, projectreport, reply, retraction, review, perspective, protocol, shortnote, studyprotocol, systematicreview, supfile, technicalnote, viewpoint, guidelines, registeredreport, tutorial
+% supfile = supplementary materials
+
+%----------
+% submit
+%----------
+% The class option ``submit'' will be changed to ``accept'' by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g., the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
+
+%------------------
+% moreauthors
+%------------------
+% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
+
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. If eps figures are used, remove the option pdftex and use LaTeX and dvi2pdf.
+
+%=================================================================
+% MDPI internal commands
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2021}
+\copyrightyear{2021}
+\externaleditor{Academic Editor: \hl{Firstname Lastname}} % For journal Automation, please change Academic Editor to ``Communicated by'' %pld add if available
+\datereceived{} 
+\dateaccepted{} 
+\datepublished{} 
+\hreflink{https://doi.org/} % If needed use \linebreak
+%------------------------------------------------------------------
+% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
+%\pdfoutput=1
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, soul, multirow, microtype, tikz, totcount, changepage, paracol, attrib, upgreek, cleveref, amsthm, hyphenat, natbib, hyperref, footmisc, url, geometry, newfloat, caption
+\usepackage{longtable}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{\alph{subfigure}}
+\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont(\textbf{#2}\normalfont)}
+\captionsetup[subfigure]{labelformat=subcaptionlabel}
+\usepackage{siunitx}
+%\usepackage{caption}
+\usepackage{rotating}
+\usepackage{xcolor}
+
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{A Causal Web between Chronotype and Metabolic Health Traits}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{A Causal Web between Chronotype and Metabolic Health Traits}
+
+% Author Orchid ID: enter ID or remove command
+\newcommand{\orcidauthorF}{0000-0002-0906-1323}
+\newcommand{\orcidauthorB}{0000-0002-9588-6304}
+\newcommand{\orcidauthorC}{0000-0001-8878-8434}
+\newcommand{\orcidauthorD}{0000-0002-2705-2068}
+\newcommand{\orcidauthorE}{0000-0002-6169-0135}
+\newcommand{\orcidauthorA}{0000-0002-0357-5454}
+\newcommand{\orcidauthorG}{0000-0003-2735-7010}
+\newcommand{\orcidauthorH}{0000-0002-2061-091X}
+
+
+\Author{{John A. Williams} $^{1,2,}$*\orcidA{},   Dominic Russ $^{1,2}$\orcidD{}, Laura Bravo-Merodio $^{1,2}$\orcidC{}, {Victor Roth Cardoso} $^{1,2}$\orcidB{}, \newline~{Samantha C. Pendleton} $^{1,2}$\orcidE{}, Furqan Aziz $^{1,2}$\orcidF{},  Animesh Acharjee $^{1,2,3}$\orcidG{} and Georgios V. Gkoutos $^{1,2,3,4,5,6}$\orcidH{}}
+
+\AuthorNames{John A. Williams,  Dominic Russ, Laura Bravo-Merodio, Victor Roth Cardoso, Samantha C. Pendleton, Furqan Aziz,  Animesh Acharjee and Georgios V. Gkoutos}
+
+\AuthorCitation{Williams, J.A.; Russ, D.; Bravo-Merodio, L.; Cardoso, V.R.; Pendleton, S.C.; Aziz, F.; Acharjee, A.; Gkoutos, G.V.}
+
+
+\address{%
+$^{1}$\quad Institute of Cancer and Genomic Sciences, Centre for Computational Biology, University of Birmingham, Birmingham B15 2TT, UK; drr719@student.bham.ac.uk (D.R.); lxb732@student.bham.ac.uk (L.B.-M.); V.RothCardoso@bham.ac.uk (V.R.C.); scp887@student.bham.ac.uk (S.C.P.); f.aziz@bham.ac.uk (F.A.); a.acharjee@bham.ac.uk (A.A.); g.gkoutos@bham.ac.uk (G.V.G.)\\
+$^{2}$\quad Institute of Translational Medicine, University of Birmingham, Birmingham B15 2TT, UK\\
+$^{3}$\quad NIHR Surgical Reconstruction and Microbiology Research Centre, University Hospital Birmingham, Birmingham B15 2WB, UK\\
+$^{4}$\quad {MRC Health Data Research UK (HDR), Midlands Site, Birmingham, B15 2TT, UK}\\
+$^{5}$\quad NIHR Experimental Cancer Medicine Centre, Birmingham B15 2TT, UK\\
+$^{6}$\quad NIHR Biomedical Research Centre, University Hospital Birmingham, Birmingham B15 2WB, UK}
+
+
+\corres{Correspondence: j.a.williams@bham.ac.uk}
+
+
+\abstract{Observational and experimental evidence has linked chronotype to both psychological and cardiometabolic traits. Recent Mendelian randomization (MR) studies have investigated direct links between chronotype and several of these traits, often in isolation of outside potential mediating or moderating traits. We mined the EpiGraphDB MR database for calculated chronotype--trait associations ($p$-value < \num{5e-8}). We then re-analyzed those relevant to metabolic or mental health and investigated for statistical evidence of horizontal pleiotropy. Analyses passing multiple testing correction were then investigated for confounders, colliders, intermediates, and reverse intermediates using the EpiGraphDB database, creating multiple chronotype--trait interactions among each of the the traits studied. We revealed 10 significant chronotype--exposure associations (false discovery rate < 0.05)  exposed to 111 potential previously known confounders, 52 intermediates, 18 reverse intermediates, and 31 colliders. Chronotype--lipid causal associations collided with treatment and diabetes effects; chronotype--bipolar associations were mediated by breast cancer; and chronotype--alcohol intake associations were impacted by confounders and intermediate variables  including known zeitgebers and molecular traits. We have reported the influence of chronotype on several cardiometabolic and behavioural traits, and identified potential confounding variables not reported on in studies while discovering new associations to drugs and disease.}
+
+% Keywords
+\keyword{circadian rhythm; chronotype; diabetes; alcohol intake; bipolar disorder; mendelian randomization} 
+
+
+
+
+
+\begin{document}
+
+
+
+\section{Introduction}
+
+With the advent of large biobank cohorts to provide genome-wide association study (GWAS), there have been several recent studies looking at the causal influence between chronotype (morningness or eveningness) exposures and both neurobehavioral/psychiatric- and cardiometabolic-related outcomes. Lind and colleagues found significant genetic correlations between oversleeping, insomnia, and undersleeping exposures with an outcome of post-traumatic stress disorder \cite{lind_molecular_2020}, but when testing for causality did not find evidence for causal effects of sleep phenotypes on post-traumatic stress. Adams and Neuhausen were interested in the interplay between chronotype and free fatty acid circulation, as well as potential associations  between free fatty acid circulation and type 2 diabetes~\cite{adams_evaluating_2019}. So as to evaluate this, they conducted two Mendelian randomization (MR) studies using two-sample data, and found that morning chronotype is associated with lower total fatty acid levels (inverse variance-weighted estimator [IVW] $\beta$ $-$0.21, $p$ = 0.02) and that elevated fatty acid levels are associated with a decrease in diabetes, granting a protective effect (IVW $\beta$ $-$0.23, $p$ = 0.01). They then extended their analysis to include subtypes of free fatty acids and their conclusions held, indicating that a morning chronotype is associated with lower mono-unsaturated fatty acid intake. Richmond and colleagues sought to model sleep traits and risk of breast cancer using chronotype, sleep duration, and insomnia GWAS for instrumental variable selection \cite{richmond_investigating_2019}. They showed a morning chronotype to be protective against breast cancer (odds ratio [OR] 0.85). Additional analyses supported these findings, showing a morning chronotype (IVW OR 0.88) to be protective against breast cancer, while increased sleep duration had a detrimental effect (IVW OR 1.19). Gibson investigated bi-directional causal effects of smoking on sleep duration and chronotype \cite{gibson_evidence_2019}. They found no clear evidence that smoking initiation influenced sleep behaviors directly, nor evidence for causal effects between chronotype on smoking behavior. However, they did find evidence that insomnia could lead to an increase in smoking behavior (IVW $\beta$ 1.21, \mbox{$p$ = 0.02}) in an under-powered analysis. Treur modelled caffeine consumption and sleep traits, including chronotype, sleep duration, and history of insomnia \cite{treur_investigating_2018}. While the association between caffeine consumption and disturbed sleep is well known, their analysis did also show strong genetic correlations between those traits; however, their MR analyses failed to produce significant causal associations. At a wider scale, Lane and colleagues used MR analysis as a follow up to their first GWAS of chronotype using the UK Biobank~\cite{lane_genome-wide_2016}. They found significant associations between evening phenotype and years of education increasing and self-reported schizophrenia diagnosis, and associations between a morning chronotype and a decreased body mass index. 
+
+These studies, each taken in isolation, paint a compelling picture of relationships between chronotype and metabolic traits. However, $p$-values reported were generally >0.001. If analyzed as a whole set of experiments under multiple testing, results would often fail to achieve statistical significance. 
+
+Additionally, most studies fail to address confounding factors which may be identifiable by performing MR tests between exposures and potential confounders. In concurrence with these studies being conducted, large databases of GWAS and MR studies have been built, including the GWAS Catalog \cite{buniello_nhgri-ebi_2019} and MR-Base \cite{hemani_mr-base_2018}. In this study, we have taken advantage of GWAS study statistics and MR analyses surrounding chronotype to identify causal relationships between exposure to chronotype and several cardiometabolic- and mental health-related traits. We have additionally mined MR repositories for potential confounding factors, identifying both non-detrimental intermediate analyses (explanatory mediators and reverse mediators) and confounders which will need to be controlled for in mechanistic studies used to validate MR experiments.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Materials and Methods}
+
+A general workflow for this study is depicted in Figure~\ref{fig:MR_Workflow}. Using the EpiGraphDB R API v1.0 \cite{liu_epigraphdb_2020}, results of pre-computed Mendelian randomization studies were obtained with the following parameters: exposure trait either ``Morning/evening person (chronotype)'' or ``Chronotype'', with a $p$-value threshold of 5e-8 (GWAS genome-wide significance). Results were filtered to significant {random}-effects inverse variance-weighted multi-SNP meta-analyses (IVW), with 120 significant associations retained, and additionally manually curated to keep associations between chronotype and mental or cardiometabolic health. Chronotype/chronotype and chronotype/sleep duration studies were discarded, leaving 16 potential studies for investigation (Figure~\ref{fig:MR_Workflow}).
+\begin{figure}[H]
+	%\centering
+	\includegraphics[width=0.9\linewidth]{Figs/Analysis1/outline.png}
+	\caption{Mendelian randomization (MR) workflow for testing the causal influence of chronotype on traits in the EpiGraphDB database. An unbiased search for GWAS-derived two-sample MR studies was performed with chronotype or moningness/eveningness as reported exposures, and IVW results ($p$ < 5e-8) retained. Potential chronotype IVs were processed with Steiger filtering, LD clumping, and stand/palindromic SNP harmonization. IVW and related MR analyses are then performed on filtered SNP summary statistics, followed by pleiotropy (MR-Egger) and leave-one-out sensitivity analyses. Associations that survive multiple testing correction are then uploaded to EpiGraphDB to investigate potential confounders not present in exposure/trait analyses as reported.}
+	\label{fig:MR_Workflow}
+\end{figure}
+
+\subsection{Mendelian Randomization Investigations}
+
+Each retained exposure's data were downloaded from MR-Base via the TwoSampleMR package version 0.5.5 \cite{hemani_mr-base_2018}. For each instrumental variable (IV) SNP in the exposure study, the following procedure was performed. First, the strandedness of each GWAS was checked to ensure that at each allele, the minor and major alleles were equal. If these were reversed, effect sizes were modified to correct for this. Pallendromic SNPs, which contain alleles represented by the same base pairs on both strands of DNA, were discarded. If SNPs were not present, proxies were found using PLINK with an $R^2$ of at least 0.8, and strand was checked again \cite{chang_second-generation_2015}. Next, SNPs, in the exposure GWAS set, were clumped by LD to ensure statistical independence. In a window of 10,000 base pairs, an $R^2$ cutoff of <0.001 was set to obtain haplotype blocks using the European reference panel of the 10,000 Genomes Project~\cite{huang_improved_2015}. In each exposure/outcome pair, this left a variable number of SNPs for use as valid, independent IVs (see Figure~\ref{fig:MR_Workflow} top second step). Effect sizes for each SNP were reported as a $\beta$ or the transformed $log(OR)$. The Wald ratio was then obtained, giving a measure of the effect of the exposure on the outcome \cite{rasooly_conducting_2019}: 
+\begin{equation}
+\widehat{\theta_j}    = \frac{\beta_{Yj}}{\beta_{Xj}}
+\end{equation}
+where $\beta$\_$Y$\_$j$ is the effect of the IV on the outcome, and $\beta$\_$X$\_$j$ is the effect of the IV on the exposure is obtained for SNP j, and $\widehat{\theta}$ is the effect size.
+
+An initial IVW analysis between each exposure/outcome set was performed, with the false discovery rate (FDR) controlled for \cite{benyamin_family-based_2009}. An FDR of <0.05 was considered significant. Rather than calculate Wald ratios individually, the outcome GWAS $\beta$s or odds ratios are regressed on the exposure in an inverse variance-weighted (IVW) meta-analysis. The slope of the regression line indicates the strength of the effect, as an increase in the unit of outcome per unit of the exposure~\cite{burgess_interpreting_2017}. 
+In a IVW meta-analysis, the  IVW estimate is calculated by:
+\begin{equation}
+\widehat{\beta}_{Yj} = \theta_{IVW}\widehat{\beta}_{Xj} + \epsilon_{Ij};      \epsilon_{Ij} \sim N(0,\sigma^2se(\widehat{\beta}_{Yj})^2)
+\end{equation}
+where $\widehat{\theta}$ is the inverse variance-weighted average, $se$ is the standard error, {$\epsilon$} is an error term (Figure~\ref{fig:MR_Workflow} third step, right), and other terms are as above.
+
+Ten significant IVW studies were then subject to four additional MR methods (\mbox{Figure~\ref{fig:MR_Workflow}}, third level left).  To address unseen horizontal pleiotropy, the Egger regression was performed~\cite{bowden_framework_2017,bowden_mendelian_2015}. The Wald ratios of each SNP are used in meta-regression by taking the inverse variance weights used in the IVW analysis without modeling the intercept. As a result, a causal estimate, similar to IVW, is obtained, adjusted though for horizontal pleiotropy which is necessary so as to ensure IVW validity \cite{bowden_mendelian_2015}.
+MR-Egger regression is an extension of IVW regression. Instead of assuming no intercept term, an intercept is~estimated:
+\begin{equation}
+\widehat{\beta}_{Yj} = \theta_{0E} + \theta_{1E}\widehat{\beta}_{Xj} + \epsilon_{Ej}; \epsilon_{Ej} \sim N(0,\sigma^2se(\widehat{\beta}_{Yj})^2)
+\end{equation}
+where $\theta_{0E}$ is the intercept and $\theta_{1E}$ the MR-Egger estimate.
+If the intercept is equal to zero, then the IVW method and MR-Egger will be equivalent \cite{burgess_interpreting_2017}. During the IVW process in MR-Egger, the effect sizes of each SNP must have the same sign, and this decreases the variation between them \cite{bowden_mendelian_2015}.
+
+Inverse variance-weighted median analyses were performed, using the median of the Wald ratios as an effect size. Unweighted analyses assume that over half of the instruments are valid, while in a weighted median analysis the assumption is that the at least 50\% of the weight of the instruments are valid themselves \cite{bowden_consistent_2016}. This approach is robust to directional pleiotropy when compared to a simple IVW meta-analysis.
+
+The mode-based estimator (MBE) clusters Wald ratios before calculating random effects in an IVW meta-analysis \cite{hartwig_robust_2017}. The simple MBE uses unweighted analysis, while the weighted MBE uses inverse variance weighting. First, a smooth empirical density function is calculated for each Wald ratio and are then clustered. The Zero Modal Pleiotropy Assumption states that the biggest cluster with the same ratio estimates will be valid instruments. These were used in each analysis, resulting in fewer SNPs and less power, but an increase in potential robustness to horizontal pleiotropy.
+
+Heterogeneity can occur when individual SNPs do not converge on an estimate; this was estimated by Cochran's $Q$ \cite{higgins_cochrane_2011}. In this context, heterogeneity may be a sign of horizontal pleiotropy, wherein SNPs effect the outcome by their influence on other confounding traits \cite{burgess_review_2017}. To inspect SNPs for outliers, we performed leave-one-out sensitivity analyses using the IVW method, leaving out one SNP in each analysis. 
+
+We used the Steiger test to access the directionality of all causative analyses post hoc~\cite{hemani_orienting_2017}. The Steiger test first assesses which variables (exposure or outcome) are influenced by the SNPs used, by testing if the SNPs explain more variance in the exposure than in the outcome with a modified $Z$ statistic. If the $p$-value of the IVW estimate and the Steiger estimate are both significant, the sign of the $Z$ statistic is used to assign the correct causal direction between exposure and outcome.
+
+\subsection{Confounder and Intermediate Analysis}
+To address potential confounders, not seen in pairwise analyses even in the absence of the statistical suggestion of horizontal pleiotropy, existing MR studies were obtained from EpiGraphDB (Figure~\ref{fig:MR_Workflow} last step). Each study exposure/outcome pair with significant FDR-corrected IVW results was used to interrogate the database for intermediate, reverse intermediate, collider, and confounding variables. Results from the study database surpassing a $p$-value threshold of <1e-5, using a fixed-effects IVW method only, were retained. The $\beta$ effect sizes for significant results between exposures and outcomes, exposures and confounders, and outcomes and confounders were used to create a weighted directed graph in Cytoscape \cite{shannon_cytoscape_2003} version 3.8.2, and the yFiles Organic (force directed) layout to visualize the relationships between traits. 
+
+All statistical analyses were performed in R version 4.0.5 \cite{r_core_team_r:_2013}. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+Initially, 120 prospective studies were identified using EpiGraphDB containing chronotype as an exposure,. Of these, there were 28 primary associations, with IVW $p$-values of <5e-8, directly relevant to this study, including measures of alcohol intake, bipolar disorder, T2DM (type 2 diabetes mellitus) as well as testosterone and triglyceride levels. See {Table S1}. Since the analyses were performed in a high-throughput environment, we re-analyzed each relevant study with the IVW method using summary statistics (\mbox{Figure~\ref{forestIVW}}). Following filtering and quality control, 10 studies held up to a false discovery rate of \mbox{$p$ < 0.05}. The bi-directional nature of the forest plot exists due the different nature of the chronotype exposure studies (treating morning or evening chronotype as case/control). Each of the 10 studies were further analyzed with a tendency toward eveningness reflecting a high $\beta$ value in the exposure effect size. 
+%% figure: re-analysis forest plots of significant traits
+\begin{figure}[H]
+	%\centering
+	\includegraphics[width=0.95\linewidth]{Figs/Analysis1/new_forestIVW1a.pdf}
+	\caption{Causal relationships between exposure to chronotype and various traits. Causal associations mined from EpiGraphDB (IVW $p$ < 5e-8) were analyzed using two chronotype exposure measures. Outcomes are listed with trait and study accession number. Exposure \textit{ebi-a-GCST003837} reflects SD increase in chronotype on a continuous morning--evening scale. Exposure \textit{ukb-a-11} represents odds of an evening chronotype. Effect sizes are from {random}-effects inverse variance-weighted analyses with 95\% confidence intervals. False discovery rate-corrected $p$-values are shown.}
+	\label{forestIVW}
+\end{figure}
+
+\subsection{Chronotype Influences on Diabetes, Alcohol Consumption, and Bipolar Disorder}
+The strongest associations ($\beta$ > 0.90) include risk for T2DM and total fatty acid concentration. T2DM included seven independent SNPs, see {{Table S3}}. The weakest association was with the MR-Egger method, $\beta$ = 0.73, which while not highly significant ($p$ = 0.04) did not reveal evidence of horizontal pleiotropy (intercept $p$-value = 0.98) or heterogeneity (Egger Q $p$-value 0.99). The IVW analysis and weighted median analysis each concurred ($p$ = 0.002 and 0.009), suggesting little loss of associative signal even if some of the seven SNPs were biased by pleiotropy (Figure~\ref{t2dm}a). Leave-one-out sensitivity analyses suggests that no one IV dominates the model, and all methods have similar effect sizes as judged by slope, as shown in Figure~\ref{t2dm}b. 
+
+Chronotype has a weaker but more statistically significant association with the amount of alcoholic beer or cider drinks consumed weekly, with the increase reflected in pints per week consumed (mean among all respondents of 3/week). With an MR-Egger intercept $p$-value of 0.31 and a significant Egger regression coefficient ($p$-value = 0.04), the initial analysis provides strong evidence that the trait may not be subject to horizontal pleiotropy. The weighted median and IVW method were again strongest ($\beta$ = 0.089 and 0.79, \mbox{$p$ = 4.4e-6} and 9.7e-4), as shown in Figure~\ref{beer}a. There was, however, evidence among the 82 SNPs which passed the threshold for strong heterogeneity (Cochran Q = 333), suggesting pleiotropy or moderating factors for further investigation even in the absence of such suggestions from the MR-Egger intercept significance test. Heterogeneity among SNPs can be observed in Figure~\ref{beer}b, while the leave-one-out analysis shows overlapping confidence intervals in each iteration, suggesting homogeneity on the whole.
+
+
+
+
+\begin{figure}[H]
+{\captionsetup{position=bottom,justification=centering}
+\begin{subfigure}{.5\linewidth}
+	\includegraphics[width=\linewidth]{Figs/Analysis2/Chronotype_vs_Type_2_diabetes.Scatterplots.pdf}
+\caption{}
+\label{t2dmScatter}
+\end{subfigure}
+\begin{subfigure}{.5\linewidth}
+	\includegraphics[width=0.95\linewidth,keepaspectratio]{Figs/Analysis2/Chronotype_vs_Type_2_diabetes.LOOplots.pdf}
+\caption{}
+\label{t2dmLoo}
+\end{subfigure}}
+\caption{An evening chronotype causes increased odds of a type 2 diabetes mellitus diagnosis. (\textbf{a}) IVW, weighted median, mode, weighted mode, and Egger regressions shown. Panel (\textbf{b}) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{t2dm}
+\end{figure}
+\unskip
+\begin{figure}[H]
+{\captionsetup{position=bottom,justification=centering}
+\begin{subfigure}{.5\linewidth}
+\centering
+	\includegraphics[width=\linewidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Average_weekly_beer_plus_cider_intake.Scatterplots.pdf}
+\caption{}
+\label{beerScatter}
+\end{subfigure}
+\begin{subfigure}{.5\linewidth}
+\centering
+	\includegraphics[width=0.95\linewidth,keepaspectratio]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Average_weekly_beer_plus_cider_intake.LOOplots.pdf}
+\caption{}
+\label{beerLoo}
+\end{subfigure}}
+\caption{An evening chronotype causes weekly (alcoholic) beer and/or cider intake. (\textbf{a}) IVW, weighted median, mode, weighted mode, and Egger regressions shown. Panel (\textbf{b}) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point~estimate.}
+\label{beer}
+\end{figure}
+The influence of chronotype on bipolar disorder appears substantially varied, with different SNPs with large standard errors apparent in Figure~\ref{bipolar}. The Cochran's Q statistic (Q = 149, $p$ = 2e-24) echoes the visible heterogeneity of SNPs in the analysis. Nevertheless, there is a consistent $\beta$ effect size among the IVW, weighted median, and weighted mode analyses (0.188, 0.175, and 0.181) with are highly statistically significant ($p$ = 4e-4, 1e-11, and 3e-6, respectively). This presents a small but powerful signal that an evening chronotype leads to an increase in activation of pathways leading to bipolar disorder. The test for horizontal pleiotropy, in contrast to the Q statistic, does not suggest horizontal pleiotropy ($p$ = 0.47).
+% bipolar
+\begin{figure}[H]
+{\captionsetup{position=bottom,justification=centering}
+\begin{subfigure}{.5\linewidth}
+	\includegraphics[width=\linewidth]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Bipolar_disorder.Scatterplots.pdf}
+\caption{}
+\label{bipolarScatter}
+\end{subfigure}
+\begin{subfigure}{.5\linewidth}
+	\includegraphics[width=0.95\linewidth,keepaspectratio]{Figs/Analysis2/Morning_evening_person_(chronotype)_vs_Bipolar_disorder.LOOplots.pdf}
+\caption{}
+\label{bipolarrLoo}
+\end{subfigure}}
+\caption{An evening chronotype contributes to the likelihood of a bipolar disorder diagnosis. (\textbf{a}) IVW, weighted median, mode, weighted mode, and Egger regressions shown. Panel (\textbf{b}) depicts leave-one-out sensitivity analyses with the IVW method, where the red line indicates the consensus IVW point estimate.}
+\label{bipolar}
+\end{figure}
+
+Results for other seven individual analyses are given in the supplemental materials.
+
+\subsection{Confounder Case Studies: Bi-Polar Disorder and Alcohol Intake}
+Each of the 10 exposure/outcome analyses were included in a confounder analysis, searching via existing MR associations for possible intermediate variables. Results in full are available in the {{Table S4}}. In Figure~\ref{gBig}, a directed graph was created to visually inspect the relationships between types of confounders, outcomes, and potentially causal exposures. Exposures are represented in green, reflecting the two independent GWAS analyses used to access chronotype. Outcomes are reflected in red, and potential intermediate or confounding traits as white notes. As may be evident, there are many potential confounders (111), followed in number by intermediates (52), colliders (35), and reverse intermediates (18) all with $p$ < 1e-5 in the EpiGraphDB database. The graph shows two clusters sharing potential confounding traits (time to first cigarette and lung cancer). Both are confounders between chronotype and two outcomes: cigarettes confound omega-3 fatty acid concentration and waking too early; lung cancer also confounds omega-3 fatty acid wile also impacting average weekly beer/cider intake.
+
+Not all MR analyses are beset by confounders, however. The relationship between exposure to an evening chronotype and bipolar disorder was not found to be influenced by a statistically significant confounder or collider. In addition to the direct relationship between chronotype and bipolar disorder, a mediator of the odds of ER+ breast cancer was discovered, see Figure~\ref{chronoBeerBipolar}a. The relationship from chronotype to cancer ($\beta$ 0.32) was stronger than the unmediated relationship directly to bipolar ($\beta$ 0.17), but weaker than the possible relationship of breast cancer to bipolar disorder ($\beta$ 0.42). 
+% start a new page without indent 4.6cm
+\clearpage
+\end{paracol}
+\nointerlineskip
+\begin{figure}[H]
+\widefigure
+%\begin{subfigure}{\linewidth}
+%\centering
+	\includegraphics[width=0.98\linewidth,keepaspectratio]{Figs/Analysis3/new_gBig.pdf}
+\caption{Causal and confounding relationships between chronotype exposures (green nodes) and traits (red nodes). White nodes {are}  potential confounding variables. Edges indicate the direction of causality (arrows). Green edges = causal relationships; {purple} = colliders, orange = confounders, {brown} = intermediates, and blue = reverse intermediates.}
+\label{gBig}
+%\end{subfigure}\\[1ex]
+\end{figure}
+\begin{paracol}{2}
+%\linenumbers
+\switchcolumn
+
+
+
+
+
+
+As a last example study, the relationship between exposure to an evening chronotype and an increase in beer/wine intake was explored. There is a possible bi-directional relationship between chronotype and beer/alcohol intake, mediated by reverse intermediates of a lack of physical activity (types of physical activity in the last 4 weeks: none of the above) and concentration of the UBE2G2 protein. Additionally, direct intermediates include the lifetime number of sexual partners. No colliders were present, but several potential confounders were identified which may need to be conditioned on, depending on study design. These included dietary consumption (milk type and coffee consumed), loneliness and isolation, hip circumference, and other metabolite measures. See Figure~\ref{chronoBeerBipolar}b. Data underlying the confounder graph in Figures~\ref{gBig} and \ref{chronoBeerBipolar} are in the Supplementary { \mbox{Table S4}}.
+\begin{figure}[H]
+{\captionsetup{position=bottom,justification=centering}
+\begin{subfigure}{.35\linewidth}
+	\includegraphics[width=\linewidth]{Figs/Analysis3/new_chrono_bipolar.pdf}
+\caption{}
+\label{chronoBipolar}
+\end{subfigure}
+\begin{subfigure}{.65\linewidth}
+	\includegraphics[width=0.95\linewidth,keepaspectratio]{Figs/Analysis3/new_chrono_beer.pdf}
+\caption{}
+\label{chronoBeer}
+\end{subfigure}}
+\caption{(\textbf{a}) An evening chronotype associates with bipolar disorder. In addition to a valid association between chronotype and bipolar disorder, an intermediate association ($p$ < 1e-5) was found for ER+ breast cancer. (\textbf{b}) An evening chronotype associates with increased beer and cider consumption. There is a potential bi-directional relationship between increased alcohol intake and an evening chronotype both directly (blue lines) and mediated by lack of physical activity and elevated UBE2G2. Chronotype may influence the number of sexual partners, which may influence average alcohol intake ({brown}). There are numerous potential confounders relating body composition, loneliness, and diet.}
+\label{chronoBeerBipolar}
+\end{figure}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discussion}
+
+% group analyses (analysis A)
+This analysis characterised the influence of an evening chronotype on cardiometabolic and behavioral traits. Chronotype, a measure of circadian rhythm, is a largely endogenous process though there are sustaining queues, zeitgebers, which influence chronotype \cite{albrecht_timing_2012}. The translational importance of understanding circadian biology is not limited to neurobehavioral function; the interplay between metabolism and circadian biology has been highlighted heavily in recent years. The gut microbiome, adipose cytokines, and metabolic hormones from ghrelin to leptin are all strongly regulated by circadian biology \cite{li_circadian_2020,socaciu_melatonin_2020,pan_circadian_2020}. Recent Mendelian randomization studies have also suggested a strong causal link between chronotype (a gross circadian phenotype) and body composition, free fatty acid circulation, and adiposity \cite{adams_evaluating_2019,jones_genome-wide_2019}. The current analysis revealed strong associations between chronotype and 10 other biological traits. In Figure~\ref{forestIVW}, we reproduced causal associations between diabetes and triglycerides. Additionally, we report novel associations  between chronotype and metabolomic data (omega-3 fatty acids, total fatty acids, bilirubin). The strongest signals include diabetes and bipolar disorder, highlighting chronotype as a link between metabolic and psychiatric health. While not all IVW MR studies passed multiple testing correction, those that did had complex relationships with other traits, various degrees of heterogeneity and potential interplay in horizontal pleiotropy.
+% individual analyses (analysis B)
+All serum triglyceride associations and a link to type 2 diabetes had the same relationship to chronotype: increased risk or concentration of the trait on an exposure to a genetic predisposition to eveningness. Interestingly, there was a significant (albeit small) association between eveningness and a decrease in likelihood to be taking nicorandil, a ventilator used to treat angina (see {Figure~S4}). 
+Nicorandil has been shown in one study to affect the diurnal rhythms in body temperature and heart rate in rats \cite{gantenbein_nicorandil_1998}. There is no evidence that the drug affects circadian behavior in humans, although variant angina (treated with nicorandil) has a circadian component, supporting the idea that the influence of circadian biology may contribute to some types of angina that are amenable to nicorandil treatment \cite{kusama_variant_2011}. The influence of chronotype on alcohol consumption was recently investigated by Hisler and colleagues, who revealed a 24 hour rhythm of alcohol craving in late adolescent adults and showed that an evening chronotype corresponds to a later craving for alcohol \cite{hisler_is_2021}. The associations between an evening chronotype and bipolar disorder are well documented \cite{ferrer_clock_2020}, and has been proposed as an endophenotype to classify subtypes of bipolar \cite{romo-nava_evening_2020}, though several interacting traits may play a role in these subtypes.
+% confounder analyses (analysis C)
+Not surprisingly, there were over 200 potential confounders or mediators observed between chronotype and the ten significant exposures studied. As evidenced by Figure~\ref{gBig}, they vary in type from acceptable in an MR analysis (intermediate, possibly reverse intermediate depending on follow-up studies) to those that must be conditioned upon to maintain causality (the most abundant intermediate, confounders) to the more problematic colliders. Colliders are so called because the causal arrows in a directed acyclic graph from exposure and outcome both impact (collide on) the variable. Unlike confounders, conditioning on colliders in regression introduces bias into the association between exposure and outcome \cite{rohrer_thinking_2018}. The four associations subject to collider bias are the relationship between chronotype and omega-3 fatty acids, serum total triglycerides, total fatty acids, and lethargy. Possible confounders for the three metabolites include other cardiometabolic parameters, including total fatty acids, fasting insulin, and VLDL concentrations. The release of metabolomic data in the UK Biobank \cite{allen_uk_2014} caters for new opportunities to investigate these collisions experimentally since they relate to chronotype and both psychiatric and cardiometabolic diseases. The only collider associated to lethargy was narcolepsy, an intuitive yet potentially complex relationship. The only confounder between an evening chronotype found in this study was ER+ breast cancer. The confounding was as an intermediate, which maintains the causal nature of the analysis while adding an extra explanatory ``path'' to get from exposure to outcome. While there is no current literature directly linking chronotype to breast cancer and then to the presence of bipolar disorder, this may be investigated in current murine models of breast cancer via knockdown experiments or by manipulating light as an external zeitgeber.
+
+% Phenome-wide approach and potential criticisms
+Instrumental variable analysis relies on strong assumptions, and occasionally unverifiable conditions \cite{labrecque_understanding_2018}. Subject knowledge is the most reliable method for concluding assumptions are valid, especially when choosing exposures and outcomes correctly. A~naive, phenome-wide search for causation between traits is likely to include among many tests non-plausible experimental designs, leading to an artificial increase in multiple testing burden and design flaws. This is evident by the need to prune associations in the first step of this study. In our re-analysis of traits in step 2, we failed to replicate the extremely low $p$-values present in the EpiGraphDB, even when using the same outcome and exposure studies obtained by a sister database, MR-Base. {Differences may be partly explained by analysis choice in the IVW models. We modeled a random effect, assuming that while each SNP contributed overall to the model in a similar direction or magnitude, the Wald ratio generated by each SNP will not be identical. In other words, if each SNP is analogous to a ``study'' in a meta-analysis, the effect sizes and variances may be similar but a model would not assume they are identical. As a large focus of this study was investigating possible confounders between traits and the possibility of pleiotropy among SNPs, a more conservative random effects approach was chosen as the basis for further analyses. Additionally, the EipGraphDB calculated several models and filtering strategies, and an optimal method for each MR analysis was chosen from a random forest model optimized on artificial data. When re-analyzing data, we chose one strategy, though we included any of their fixed-effect models when incorporating pre-calculated confounder MR analyses as this was the most abundant analysis method in the database.} Without access to the underlying filtering methods used in the large repositories, we can speculate that instrumental variable selection, LD clumping, and filtering {also} played a part. However, this re-analysis has produced associations that stand up to multiple testing while revealing novel associations. This study was limited to viewing causality through the lens of Mendelian randomization alone. In our previous work, we have used gene expression data to identify causal regulatory networks using Bayesian approaches \cite{Aziz_2020}. Opportunities exist to combine these approaches, creating multimodal graphs of gene regulatory networks from that approach with the multitrait networks created in this work. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+Our findings have revealed potential causal associations between chronotype and several behavioral and metabolic traits. While using publicly available data to confirm previously known associations (T2DM, cholesterol) we have found novel associations which may be validated experimentally in models. These include associations between chronotype and the vasodilator nicorandil, and a relationship between chronotype and bipolar disorder potentially mediated by estrogen-receptive breast cancer. Lastly, we have revealed potential confounders and colliders impacting the relationship between chronotype and commonly reported cardiometabolic traits which should be addressed through a combination of multivariate and multistage analyses as appropriate.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section{Patents}
+
+% This section is not mandatory, but may be added if there are patents resulting from the work reported in this manuscript.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{6pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+\supplementary{The following are available online at \linksupplementary{s1}, Table S1: TableS1EpigraphDBIVWresults.xlsx. EpiGraphDB data downloaded to produce Figure 2.
+
+Table S2: TableS2StudyCharacteristics.xlsx.
+SNP-level information on all 10 studies analyzed needed to reproduce analyses of these 10 studies.
+
+Table S3: TableS3MRAnalysisResults.xlsx. Summary level results for each of the 10 MR analyses. 
+
+Table S4: TableS4ConfounderGraph.xlsx.
+Statistics downloaded from EpiGraphDB needed to reproduce figures 6 and 7.
+
+Figure S8: FigureS8.pdf: A2 size PDF of Figure 6 for on-screen viewing.
+
+Figures S1-S7: FiguresS1-S7.pdf: Remaining MR Results Figures.}
+
+% Only for the journal Methods and Protocols:
+% If you wish to submit a video article, please do so with any other supplementary material.
+% \supplementary{The following are available at \linksupplementary{s1}, Figure S1: title, Table S1: title, Video S1: title. A supporting video article is available at doi: link.} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\authorcontributions{Conceptualization, J.A.W.; methodology, J.A.W.; software, J.A.W; validation J.A.W.; formal analysis J.A.W.; investigation, J.A.W., D.R., V.R.C., L.B.-M., S.C.P., F.A., A.A., and G.V.G.; writing---original draft preparation, J.A.W. and G.V.G.; writing---review and editing, J.A.W., D.R., V.R.C., L.B.-M., S.C.P., F.A., A.A., and G.V.G.; visualization, J.A.W.; supervision, A.A. and G.V.G.; project administration, G.V.G.; funding acquisition, G.V.G. All authors have read and agreed to the published version of the~manuscript.}
+%For research articles with several authors, a short paragraph specifying their individual contributions must be provided. The following statements should be used ``Conceptualization, X.X. and Y.Y.; methodology, X.X.; software, X.X.; validation, X.X., Y.Y. and Z.Z.; formal analysis, X.X.; investigation, X.X.; resources, X.X.; data curation, X.X.; writing---original draft preparation, X.X.; writing---review and editing, X.X.; visualization, X.X.; supervision, X.X.; project administration, X.X.; funding acquisition, Y.Y. All authors have read and agreed to the published version of the manuscript.'', please turn to the  \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation. Authorship must be limited to those who have contributed substantially to the work~reported.}
+
+\funding{The authors acknowledge support from the NIHR Birmingham ECMC, NIHR Birmingham SRMRC, Nanocommons H2020-EU (731032) and the NIHR Birmingham Biomedical Research Centre and the MRC Heath Data Research UK (HDRUK/CFC/01), an initiative funded by UK Research and Innovation, Department of Health and Social Care (England) and the devolved administrations, and leading medical research charities. The views expressed in this publication are those of the authors and not necessarily those of the NHS, the National Institute for Health Research, the Medical Research Council or the Department of Health.}
+
+\institutionalreview{Not applicable}
+%In this section, please add the Institutional Review Board Statement and approval number for studies involving humans or animals. Please note that the Editorial Office might ask you for further information. Please add ``The study was conducted according to the guidelines of the Declaration of Helsinki, and approved by the Institutional Review Board (or Ethics Committee) of NAME OF INSTITUTE (protocol code XXX and date of approval).'' OR ``Ethical review and approval were waived for this study, due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans or animals. You might also choose to exclude this statement if the study did not involve humans or animals.}
+
+\informedconsent{Not applicable}
+%Any research article describing a study involving humans should contain this statement. Please add ``Informed consent was obtained from all subjects involved in the study.'' OR ``Patient consent was waived due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans. You might also choose to exclude this statement if the study did not involve humans.
+
+%Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
+
+\dataavailability{Data are available via the EpiGraphDB and MRBase APIs. Data used to produce all figures (including supplementary figures) are available in { Tables S1--S4}.}
+
+%\acknowledgments{In this section you can acknowledge any support given which is not covered by the author contribution or funding sections. This may include administrative and technical support, or donations in kind (e.g., materials used for experiments).}
+
+\conflictsofinterest{The authors declare no conflict of interest.} 
+
+%% Optional
+%\sampleavailability{Samples of the compounds ... are available from the authors.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Only for journal Encyclopedia
+%\entrylink{The Link to this entry published on the encyclopedia platform.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+%\abbreviations{Abbreviations}{The following abbreviations are used in this manuscript:\\
+%
+%\noindent 
+%\begin{tabular}{@{}ll}
+%GWAS & Genome-wide association study
+%MR & Mendelian randomization
+%IVW & Inverse‐variance weighted
+%OR & Odds ratio
+%SNP & Single nucleotide polymorphism
+%LD & linkage disequilibrium
+%IV & Instrumental variable
+%MBE & mode-based estimator
+%FDR & alse discovery rate
+%T2DM & Type 2 diabetes melletus
+%ER+ & Estrogen Receptor positive
+%VLDL & Very low density lipoprotein
+%
+%\end{tabular}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional
+% \appendixtitles{no} % Leave argument ``no'' if all appendix headings stay EMPTY (then no dot is printed after ``Appendix A''). If the appendix sections contain a heading then change the argument to ``yes''.
+% \appendixstart
+% \appendix
+% \section{}
+% \subsection{}
+% The appendix is an optional section that can contain details and data supplemental to the main text---for example, explanations of experimental details that would disrupt the flow of the main text but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data are shown in the main text can be added here if brief, or as Supplementary Data. Mathematical proofs of results not central to the paper can be added as an appendix.
+
+% \begin{specialtable}[H] 
+% %\tablesize{\scriptsize}
+% \caption{This is a table caption. Tables should be placed in the main text near to the first time they are~cited.\label{tab1}}
+% %\tablesize{} % You can specify the fontsize here, e.g., \tablesize{\footnotesize}. If commented out \small will be used.
+% \begin{tabular}{ccc}
+% \toprule
+% \textbf{Title 1}	& \textbf{Title 2}	& \textbf{Title 3}\\
+% \midrule
+% Entry 1		& Data			& Data\\
+% Entry 2		& Data			& Data\\
+% \bottomrule
+% \end{tabular}
+% \end{specialtable}
+
+% \section{}
+% All appendix sections must be cited in the main text. In the appendices, Figures, Tables, etc. should be labeled, starting with ``A''---e.g., Figure A1, Figure A2, etc. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{paracol}
+\reftitle{References}
+
+\begin{thebibliography}{999}
+
+\bibitem[Lind \em{et~al.}(2020)Lind, Brick, Gehrman, Duncan, Gelaye, Maihofer,
+  Nievergelt, Nugent, Stein, Amstadter, and {Psychiatric Genomics Consortium
+  Posttraumatic Stress Disorder}]{lind_molecular_2020}
+Lind, M.J.; Brick, L.A.; Gehrman, P.R.; Duncan, L.E.; Gelaye, B.; Maihofer,
+  A.X.; Nievergelt, C.M.; Nugent, N.R.; Stein, M.B.; Amstadter, A.B.
+  {Psychiatric Genomics Consortium Posttraumatic Stress Disorder}.
+\newblock Molecular genetic overlap between posttraumatic stress disorder and
+  sleep phenotypes.
+\newblock {\em Sleep} {\bf 2020}, {\em 43}.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1093/sleep/zsz257}{\detokenize{10.1093/sleep/zsz257}}}.
+
+\bibitem[Adams and Neuhausen(2019)]{adams_evaluating_2019}
+Adams, C.D.; Neuhausen, S.L.
+\newblock Evaluating causal associations between chronotype and fatty acids and
+  between fatty acids and type 2 diabetes: {A} {Mendelian} randomization study.
+\newblock {\em Nutr. Metab. Cardiovasc. Dis. NMCD} {\bf
+  2019}, {\em 29},~1176--1184.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1016/j.numecd.2019.06.020}{\detokenize{10.1016/j.numecd.2019.06.020}}}.
+
+\bibitem[Richmond \em{et~al.}(2019)Richmond, Anderson, Dashti, Jones, Lane,
+  Strand, Brumpton, Rutter, Wood, Straif, Relton, Munafò, Frayling, Martin,
+  Saxena, Weedon, Lawlor, and Smith]{richmond_investigating_2019}
+Richmond, R.C.; Anderson, E.L.; Dashti, H.S.; Jones, S.E.; Lane, J.M.; Strand,
+  L.B.; Brumpton, B.; Rutter, M.K.; Wood, A.R.; Straif, K.; et~al.
+\newblock Investigating causal relations between sleep traits and risk of
+  breast cancer in women: Mendelian randomisation study.
+\newblock {\em BMJ (Clin. Res. Ed.)} {\bf 2019}, {\em 365},~l2327.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1136/bmj.l2327}{\detokenize{10.1136/bmj.l2327}}}.
+
+\bibitem[Gibson \em{et~al.}(2019)Gibson, Munafò, Taylor, and
+  Treur]{gibson_evidence_2019}
+Gibson, M.; Munafò, M.R.; Taylor, A.E.; Treur, J.L.
+\newblock Evidence for {Genetic} {Correlations} and {Bidirectional}, {Causal}
+  {Effects} {Between} {Smoking} and {Sleep} {Behaviors}.
+\newblock {\em Nicotine Tob. Res. Off. J. Soc. Res. Nicotine Tob.} {\bf 2019}, {\em 21},~731--738.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1093/ntr/nty230}{\detokenize{10.1093/ntr/nty230}}}.
+
+\bibitem[Treur \em{et~al.}(2018)Treur, Gibson, Taylor, Rogers, and
+  Munafò]{treur_investigating_2018}
+Treur, J.L.; Gibson, M.; Taylor, A.E.; Rogers, P.J.; Munafò, M.R.
+\newblock Investigating genetic correlations and causal effects between
+  caffeine consumption and sleep behaviours.
+\newblock {\em J. Sleep Res.} {\bf 2018}, {\em 27},~e12695.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1111/jsr.12695}{\detokenize{10.1111/jsr.12695}}}.
+
+\bibitem[Lane \em{et~al.}(2016)Lane, Vlasac, Anderson, Kyle, Dixon, Bechtold,
+  Gill, Little, Luik, Loudon, Emsley, Scheer, Lawlor, Redline, Ray, Rutter, and
+  Saxena]{lane_genome-wide_2016}
+Lane, J.M.; Vlasac, I.; Anderson, S.G.; Kyle, S.D.; Dixon, W.G.; Bechtold,
+  D.A.; Gill, S.; Little, M.A.; Luik, A.; Loudon, A.; et~al.
+\newblock Genome-wide association analysis identifies novel loci for chronotype
+  in 100,420 individuals from the {UK} {Biobank}.
+\newblock {\em Nat. Commun.} {\bf 2016}, {\em 7},~10889.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1038/ncomms10889}{\detokenize{10.1038/ncomms10889}}}.
+
+\bibitem[Buniello \em{et~al.}(2019)Buniello, MacArthur, Cerezo, Harris,
+  Hayhurst, Malangone, McMahon, Morales, Mountjoy, Sollis, Suveges, Vrousgou,
+  Whetzel, Amode, Guillen, Riat, Trevanion, Hall, Junkins, Flicek, Burdett,
+  Hindorff, Cunningham, and Parkinson]{buniello_nhgri-ebi_2019}
+Buniello, A.; MacArthur, J.A.L.; Cerezo, M.; Harris, L.W.; Hayhurst, J.;
+  Malangone, C.; McMahon, A.; Morales, J.; Mountjoy, E.; Sollis, E.; et~al.
+\newblock The {NHGRI}-{EBI} {GWAS} {Catalog} of published genome-wide
+  association studies, targeted arrays and summary statistics 2019.
+\newblock {\em Nucleic Acids Res.} {\bf 2019}, {\em 47},~D1005--D1012.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1093/nar/gky1120}{\detokenize{10.1093/nar/gky1120}}}.
+
+\bibitem[Hemani \em{et~al.}(2018)Hemani, Zheng, Elsworth, Wade, Haberland,
+  Baird, Laurin, Burgess, Bowden, Langdon, Tan, Yarmolinsky, Shihab, Timpson,
+  Evans, Relton, Martin, Davey~Smith, Gaunt, and Haycock]{hemani_mr-base_2018}
+Hemani, G.; Zheng, J.; Elsworth, B.; Wade, K.H.; Haberland, V.; Baird, D.;
+  Laurin, C.; Burgess, S.; Bowden, J.; Langdon, R.; et~al.
+\newblock The {MR}-{Base} platform supports systematic causal inference across
+  the human phenome.
+\newblock {\em eLife} {\bf 2018}, {\em 7},~e34408.
+\newblock 
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.7554/eLife.34408}{\detokenize{10.7554/eLife.34408}}}.
+
+\bibitem[Liu \em{et~al.}(2020)Liu, Elsworth, Erola, Haberland, Hemani, Lyon,
+  Zheng, Lloyd, Vabistsevits, and Gaunt]{liu_epigraphdb_2020}
+Liu, Y.; Elsworth, B.; Erola, P.; Haberland, V.; Hemani, G.; Lyon, M.; Zheng,
+  J.; Lloyd, O.; Vabistsevits, M.; Gaunt, T.R.
+\newblock {EpiGraphDB}: A database and data mining platform for health data
+  science.
+\newblock {\em Bioinformatics} {\bf 2020}.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1093/bioinformatics/btaa961}{\detokenize{10.1093/bioinformatics/btaa961}}}.
+
+\bibitem[Chang \em{et~al.}(2015)Chang, Chow, Tellier, Vattikuti, Purcell, and
+  Lee]{chang_second-generation_2015}
+Chang, C.C.; Chow, C.C.; Tellier, L.C.; Vattikuti, S.; Purcell, S.M.; Lee, J.J.
+\newblock Second-generation {PLINK}: rising to the challenge of larger and
+  richer datasets.
+\newblock {\em GigaScience} {\bf 2015}, {\em 4}.
+\newblock 
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1186/s13742-015-0047-8}{\detokenize{10.1186/s13742-015-0047-8}}}.
+
+\bibitem[Huang \em{et~al.}(2015)Huang, Howie, McCarthy, Memari, Walter, Min,
+  Danecek, Malerba, Trabetti, Zheng, {UK10K Consortium}, Gambaro, Richards,
+  Durbin, Timpson, Marchini, and Soranzo]{huang_improved_2015}
+Huang, J.; Howie, B.; McCarthy, S.; Memari, Y.; Walter, K.; Min, J.L.; Danecek,
+  P.; Malerba, G.; Trabetti, E.; Zheng, H.F.; et~al.
+\newblock Improved imputation of low-frequency and rare variants using the
+  {UK10K} haplotype reference panel.
+\newblock {\em Nat. Commun.} {\bf 2015}, {\em 6},~8111.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1038/ncomms9111}{\detokenize{10.1038/ncomms9111}}}.
+
+\bibitem[Rasooly and Patel(2019)]{rasooly_conducting_2019}
+Rasooly, D.; Patel, C.J.
+\newblock Conducting a {Reproducible} {Mendelian} {Randomization} {Analysis}
+  {Using} the {R} {Analytic} {Statistical} {Environment}.
+\newblock {\em Curr. Protoc. Hum. Genet.} {\bf 2019}, {\em 101},~e82.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1002/cphg.82}{\detokenize{10.1002/cphg.82}}}.
+
+\bibitem[Benyamin \em{et~al.}(2009)Benyamin, Visscher, and
+  McRae]{benyamin_family-based_2009}
+Benyamin, B.; Visscher, P.M.; McRae, A.F.
+\newblock Family-based genome-wide association studies.
+\newblock {\em Pharmacogenomics} {\bf 2009}, {\em 10},~181--190.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.2217/14622416.10.2.181}{\detokenize{10.2217/14622416.10.2.181}}}.
+
+\bibitem[Burgess and Thompson(2017)]{burgess_interpreting_2017}
+Burgess, S.; Thompson, S.G.
+\newblock Interpreting findings from {Mendelian} randomization using the
+  {MR}-{Egger} method.
+\newblock {\em Eur. J. Epidemiol.} {\bf 2017}, {\em
+  32},~377--389.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1007/s10654-017-0255-x}{\detokenize{10.1007/s10654-017-0255-x}}}.
+
+\bibitem[Bowden \em{et~al.}(2017)Bowden, Del Greco~M, Minelli, Davey~Smith,
+  Sheehan, and Thompson]{bowden_framework_2017}
+Bowden, J.; Del Greco~M, F.; Minelli, C.; Davey~Smith, G.; Sheehan, N.;
+  Thompson, J.
+\newblock A framework for the investigation of pleiotropy in two-sample summary
+  data {Mendelian} randomization.
+\newblock {\em Stat. Med.} {\bf 2017}, {\em 36},~1783--1802.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1002/sim.7221}{\detokenize{10.1002/sim.7221}}}.
+
+\bibitem[Bowden \em{et~al.}(2015)Bowden, Davey~Smith, and
+  Burgess]{bowden_mendelian_2015}
+Bowden, J.; Davey~Smith, G.; Burgess, S.
+\newblock Mendelian randomization with invalid instruments: Effect estimation
+  and bias detection through {Egger} regression.
+\newblock {\em Int. J. Epidemiol.} {\bf 2015}, {\em
+  44},~512--525.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1093/ije/dyv080}{\detokenize{10.1093/ije/dyv080}}}.
+
+\bibitem[Bowden \em{et~al.}(2016)Bowden, Davey~Smith, Haycock, and
+  Burgess]{bowden_consistent_2016}
+Bowden, J.; Davey~Smith, G.; Haycock, P.C.; Burgess, S.
+\newblock Consistent {Estimation} in {Mendelian} {Randomization} with {Some}
+  {Invalid} {Instruments} {Using} a {Weighted} {Median} {Estimator}.
+\newblock {\em Genet. Epidemiol.} {\bf 2016}, {\em 40},~304--314.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1002/gepi.21965}{\detokenize{10.1002/gepi.21965}}}.
+
+\bibitem[Hartwig \em{et~al.}(2017)Hartwig, Davey~Smith, and
+  Bowden]{hartwig_robust_2017}
+Hartwig, F.P.; Davey~Smith, G.; Bowden, J.
+\newblock Robust inference in summary data {Mendelian} randomization via the
+  zero modal pleiotropy assumption.
+\newblock {\em Int. J. Epidemiol.} {\bf 2017}, {\em
+  46},~1985--1998.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1093/ije/dyx102}{\detokenize{10.1093/ije/dyx102}}}.
+
+\bibitem[Higgins and Green(2011)]{higgins_cochrane_2011}
+Higgins, J.; Green, S. (Eds.)
+\newblock {\em Cochrane {Handbook} for {Systematic} {Reviews} of
+  {Interventions}}, {5.1.0 [updated march 2011] ed.}; {The Coochrane
+  Collaboration:}  2011. Available from www.training.cochrane.org/handbook. 
+
+\bibitem[Burgess \em{et~al.}(2017)Burgess, Small, and
+  Thompson]{burgess_review_2017}
+Burgess, S.; Small, D.S.; Thompson, S.G.
+\newblock A review of instrumental variable estimators for {Mendelian}
+  randomization.
+\newblock {\em Stat. Methods Med. Res.} {\bf 2017}, {\em
+  26},~2333--2355.
+\newblock 
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1177/0962280215597579}{\detokenize{10.1177/0962280215597579}}}.
+
+\bibitem[Hemani \em{et~al.}(2017)Hemani, Tilling, and
+  Davey~Smith]{hemani_orienting_2017}
+Hemani, G.; Tilling, K.; Davey~Smith, G.
+\newblock Orienting the causal relationship between imprecisely measured traits
+  using {GWAS} summary data.
+\newblock {\em PLoS Genet.} {\bf 2017}, {\em 13},~e1007081.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1371/journal.pgen.1007081}{\detokenize{10.1371/journal.pgen.1007081}}}.
+
+\bibitem[Shannon \em{et~al.}(2003)Shannon, Markiel, Ozier, Baliga, Wang,
+  Ramage, Amin, Schwikowski, and Ideker]{shannon_cytoscape_2003}
+Shannon, P.; Markiel, A.; Ozier, O.; Baliga, N.S.; Wang, J.T.; Ramage, D.;
+  Amin, N.; Schwikowski, B.; Ideker, T.
+\newblock Cytoscape: A software environment for integrated models of
+  biomolecular interaction networks.
+\newblock {\em Genome Res.} {\bf 2003}, {\em 13},~2498--2504.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1101/gr.1239303}{\detokenize{10.1101/gr.1239303}}}.
+
+\bibitem[{R Core Team}(2013)]{r_core_team_r:_2013}
+{R Core Team (2013)}.
+\newblock \emph{R: {A} Language and Environment for Statistical Computing}; R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+
+\bibitem[Albrecht(2012)]{albrecht_timing_2012}
+Albrecht, U.
+\newblock Timing to perfection: The biology of central and peripheral circadian
+  clocks.
+\newblock {\em Neuron} {\bf 2012}, {\em 74},~246--260.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1016/j.neuron.2012.04.006}{\detokenize{10.1016/j.neuron.2012.04.006}}}.
+
+\bibitem[Li \em{et~al.}(2020)Li, Ma, Yao, Su, Tan, Wu, Huang, Li, Yin, Tosini,
+  and Yin]{li_circadian_2020}
+Li, Y.; Ma, J.; Yao, K.; Su, W.; Tan, B.; Wu, X.; Huang, X.; Li, T.; Yin, Y.;
+  Tosini, G.; et~al.
+\newblock Circadian {Rhythms} and {Obesity}: {Timekeeping} {Governs} {Lipid}
+  {Metabolism}.
+\newblock {\em J. Pineal Res.} {\bf 2020}, e12682.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1111/jpi.12682}{\detokenize{10.1111/jpi.12682}}}.
+
+\bibitem[Socaciu \em{et~al.}(2020)Socaciu, Ionuţ, Socaciu, Ungur, Bârsan,
+  Chiorean, Socaciu, and Râjnoveanu]{socaciu_melatonin_2020}
+Socaciu, A.I.; Ionuţ, R.; Socaciu, M.A.; Ungur, A.P.; Bârsan, M.; Chiorean,
+  A.; Socaciu, C.; Râjnoveanu, A.G.
+\newblock Melatonin, an ubiquitous metabolic regulator: Functions, mechanisms
+  and effects on circadian disruption and degenerative diseases.
+\newblock {\em Rev. Endocr. Metab. Disord.} {\bf 2020}.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1007/s11154-020-09570-9}{\detokenize{10.1007/s11154-020-09570-9}}}.
+
+\bibitem[Pan \em{et~al.}(2020)Pan, Mota, and Zhang]{pan_circadian_2020}
+Pan, X.; Mota, S.; Zhang, B.
+\newblock Circadian {Clock} {Regulation} on {Lipid} {Metabolism} and
+  {Metabolic} {Diseases}.
+\newblock {\em Adv. Exp. Med. Biol.} {\bf 2020}, {\em
+  1276},~53--66.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1007/978-981-15-6082-8_5}{\detokenize{10.1007/978-981-15-6082-8_5}}}.
+
+\bibitem[Jones \em{et~al.}(2019)Jones, Lane, Wood, van Hees, Tyrrell, Beaumont,
+  Jeffries, Dashti, Hillsdon, Ruth, Tuke, Yaghootkar, Sharp, Jie, Thompson,
+  Harrison, Dawes, Byrne, Tiemeier, Allebrandt, Bowden, Ray, Freathy, Murray,
+  Mazzotti, Gehrman, Lawlor, Frayling, Rutter, Hinds, Saxena, and
+  Weedon]{jones_genome-wide_2019}
+Jones, S.E.; Lane, J.M.; Wood, A.R.; van Hees, V.T.; Tyrrell, J.; Beaumont,
+  R.N.; Jeffries, A.R.; Dashti, H.S.; Hillsdon, M.; Ruth, K.S.; et~al.
+\newblock Genome-wide association analyses of chronotype in 697,828 individuals
+  provides insights into circadian rhythms.
+\newblock {\em Nat. Commun.} {\bf 2019}, {\em 10},~343.
+\newblock 
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1038/s41467-018-08259-7}{\detokenize{10.1038/s41467-018-08259-7}}}.
+
+\bibitem[Gantenbein \em{et~al.}(1998)Gantenbein, Attolini, and
+  Bruguerolle]{gantenbein_nicorandil_1998}
+Gantenbein, M.; Attolini, L.; Bruguerolle, B.
+\newblock Nicorandil affects diurnal rhythms of body temperature, heart rate
+  and locomotor activity in rats.
+\newblock {\em Eur. J. Pharmacol.} {\bf 1998}, {\em
+  346},~125--130.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1016/s0014-2999(97)01606-3}{\detokenize{10.1016/s0014-2999(97)01606-3}}}.
+
+\bibitem[Kusama \em{et~al.}(2011)Kusama, Kodani, Nakagomi, Otsuka, Atarashi,
+  Kishida, and Mizuno]{kusama_variant_2011}
+Kusama, Y.; Kodani, E.; Nakagomi, A.; Otsuka, T.; Atarashi, H.; Kishida, H.;
+  Mizuno, K.
+\newblock Variant angina and coronary artery spasm: The clinical spectrum,
+  pathophysiology, and management.
+\newblock {\em J. Nippon. Med. Sch. Nippon Ika Daigaku Zasshi}
+  {\bf 2011}, {\em 78},~4--12.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1272/jnms.78.4}{\detokenize{10.1272/jnms.78.4}}}.
+
+\bibitem[Hisler \em{et~al.}(2021)Hisler, Rothenberger, Clark, and
+  Hasler]{hisler_is_2021}
+Hisler, G.C.; Rothenberger, S.D.; Clark, D.B.; Hasler, B.P.
+\newblock Is there a 24-hour rhythm in alcohol craving and does it vary by
+  sleep/circadian timing?
+\newblock {\em Chronobiol. Int.} {\bf 2021}, {\em 38},~109--121.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1080/07420528.2020.1838532}{\detokenize{10.1080/07420528.2020.1838532}}}.
+
+\bibitem[Ferrer \em{et~al.}(2020)Ferrer, Costas, Gratacos, Martínez-Amorós,
+  Labad, Soriano-Mas, Palao, Menchón, Crespo, Urretavizcaya, and
+  Soria]{ferrer_clock_2020}
+Ferrer, A.; Costas, J.; Gratacos, M.; Martínez-Amorós, È.; Labad, J.;
+  Soriano-Mas, C.; Palao, D.; Menchón, J.M.; Crespo, J.M.; Urretavizcaya, M.;
+  et~al.
+\newblock Clock gene polygenic risk score and seasonality in major depressive
+  disorder and bipolar disorder.
+\newblock {\em Genes Brain Behav.} {\bf 2020}, {\em 19},~e12683.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1111/gbb.12683}{\detokenize{10.1111/gbb.12683}}}.
+
+\bibitem[Romo-Nava \em{et~al.}(2020)Romo-Nava, Blom, Cuellar-Barboza, Winham,
+  Colby, Nunez, Biernacka, Frye, and McElroy]{romo-nava_evening_2020}
+Romo-Nava, F.; Blom, T.J.; Cuellar-Barboza, A.B.; Winham, S.J.; Colby, C.L.;
+  Nunez, N.A.; Biernacka, J.M.; Frye, M.A.; McElroy, S.L.
+\newblock Evening chronotype as a discrete clinical subphenotype in bipolar
+  disorder.
+\newblock {\em J. Affect. Disord.} {\bf 2020}, {\em 266},~556--562.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1016/j.jad.2020.01.151}{\detokenize{10.1016/j.jad.2020.01.151}}}.
+
+\bibitem[Rohrer(2018)]{rohrer_thinking_2018}
+Rohrer, J.M.
+\newblock Thinking {Clearly} {About} {Correlations} and {Causation}:
+  {Graphical} {Causal} {Models} for {Observational} {Data}.
+\newblock {\em Adv. Methods Pract. Psychol. Sci.} {\bf
+  2018}, {\em 1},~27--42.
+\newblock 
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1177/2515245917745629}{\detokenize{10.1177/2515245917745629}}}.
+
+\bibitem[Allen \em{et~al.}(2014)Allen, Sudlow, Peakman, Collins, and
+  Biobank]{allen_uk_2014}
+Allen, N.E.; Sudlow, C.; Peakman, T.; Collins, R.; Biobank, O.b.O.U.
+\newblock {UK} {Biobank} {Data}: {Come} and {Get} {It}.
+\newblock {\em Sci. Transl. Med.} {\bf 2014}, {\em
+  6},~224ed4.
+\newblock 
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1126/scitranslmed.3008601}{\detokenize{10.1126/scitranslmed.3008601}}}.
+
+\bibitem[Labrecque and Swanson(2018)]{labrecque_understanding_2018}
+Labrecque, J.; Swanson, S.A.
+\newblock Understanding the {Assumptions} {Underlying} {Instrumental}
+  {Variable} {Analyses}: A {Brief} {Review} of {Falsification} {Strategies} and
+  {Related} {Tools}.
+\newblock {\em Curr. Epidemiol. Rep.} {\bf 2018}, {\em 5},~214--220.
+\newblock
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.1007/s40471-018-0152-1}{\detokenize{10.1007/s40471-018-0152-1}}}.
+
+\bibitem[Aziz \em{et~al.}(2020)Aziz, Acharjee, Williams, Russ, Bravo-Merodio,
+  and Gkoutos]{Aziz_2020}
+Aziz, F.; Acharjee, A.; Williams, J.A.; Russ, D.; Bravo-Merodio, L.; Gkoutos,
+  G.V.
+\newblock Biomarker prioritisation and power estimation using ensemble gene
+  regulatory network inference.
+\newblock {\em Int. J. Mol. Sci.} {\bf 2020}, {\em
+  21},~7886,
+\newblock 
+  doi:{\changeurlcolor{black}\href{https://doi.org/10.3390/ijms21217886}{\detokenize{10.3390/ijms21217886}}}.
+
+\end{thebibliography}
+
+
+%=====================================
+% References, variant B: internal bibliography
+%=====================================
+% \begin{thebibliography}{999}
+% % Reference 1
+% \bibitem[Author1(year)]{ref-journal}
+% Author~1, T. The title of the cited article. {\em Journal Abbreviation} {\bf 2008}, {\em 10}, 142--149.
+% % Reference 2
+% \bibitem[Author2(year)]{ref-book1}
+% Author~2, L. The title of the cited contribution. In {\em The Book Title}; Editor1, F., Editor2, A., Eds.; Publishing House: City, Country, 2007; pp. 32--58.
+% % Reference 3
+% \bibitem[Author3(year)]{ref-book2}
+% Author 1, A.; Author 2, B. \textit{Book Title}, 3rd ed.; Publisher: Publisher Location, Country, 2008; pp. 154--196.
+% % Reference 4
+% \bibitem[Author4(year)]{ref-unpublish}
+% Author 1, A.B.; Author 2, C. Title of Unpublished Work. \textit{Abbreviated Journal Name} stage of publication (under review; accepted; in~press).
+% % Reference 5
+% \bibitem[Author5(year)]{ref-communication}
+% Author 1, A.B. (University, City, State, Country); Author 2, C. (Institute, City, State, Country). Personal communication, 2012.
+% % Reference 6
+% \bibitem[Author6(year)]{ref-proceeding}
+% Author 1, A.B.; Author 2, C.D.; Author 3, E.F. Title of Presentation. In Title of the Collected Work (if available), Proceedings of the Name of the Conference, Location of Conference, Country, Date of Conference; Editor 1, Editor 2, Eds. (if available); Publisher: City, Country, Year (if available); Abstract Number (optional), Pagination (optional).
+% % Reference 7
+% \bibitem[Author7(year)]{ref-thesis}
+% Author 1, A.B. Title of Thesis. Level of Thesis, Degree-Granting University, Location of University, Date of Completion.
+% % Reference 8
+% \bibitem[Author8(year)]{ref-url}
+% Title of Site. Available online: URL (accessed on Day Month Year).
+% \end{thebibliography}
+
+% If authors have biography, please use the format below
+%\section*{Short Biography of Authors}
+%\bio
+%{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{Definitions/author1.pdf}}}
+%{\textbf{Firstname Lastname} Biography of first author}
+%
+%\bio
+%{\raisebox{-0.35cm}{\includegraphics[width=3.5cm,height=5.3cm,clip,keepaspectratio]{Definitions/author2.jpg}}}
+%{\textbf{Firstname Lastname} Biography of second author}
+
+% The following MDPI journals use author-date citation: Arts, Econometrics, Economies, Genealogy, Humanities, IJFS, JRFM, Laws, Religions, Risks, Social Sciences. For those journals, please follow the formatting guidelines on http://www.mdpi.com/authors/references
+% To cite two works by the same author: \citeauthor{ref-journal-1a} (\citeyear{ref-journal-1a}, \citeyear{ref-journal-1b}). This produces: Whittaker (1967, 1975)
+% To cite two works by the same author with specific pages: \citeauthor{ref-journal-3a} (\citeyear{ref-journal-3a}, p. 328; \citeyear{ref-journal-3b}, p.475). This produces: Wong (1999, p. 328; 2000, p. 475)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% for journal Sci
+%\reviewreports{\\
+%Reviewer 1 comments and authors’ response\\
+%Reviewer 2 comments and authors’ response\\
+%Reviewer 3 comments and authors’ response
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
